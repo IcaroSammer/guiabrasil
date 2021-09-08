@@ -1,0 +1,24 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Prato #{@type_attraction.name} " %> 
+      		<%= edit_resource edit_user_type_attraction_path(@type_attraction) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= TypeAttraction.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @type_attraction.active %><br>
+            <b><%= TypeAttraction.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @type_attraction.name %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: user_type_attractions_path) %>
+    
+  
+  </footer>

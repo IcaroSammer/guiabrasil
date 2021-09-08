@@ -1,0 +1,62 @@
+<%= simple_form_for [:user, @establishment], 
+  wrapper_mappings: {
+    check_boxes:    :vertical_collection,
+    radio_buttons:  :vertical_collection,
+    file:           :custom_file,
+    boolean:        :custom_boolean_switch
+  }  do |f|%>
+  <%= f.error_notification %>
+    
+  <%
+    require 'json'
+    finder = Correios::CEP::AddressFinder.new
+  %>
+    <div class="container-md">
+      <div class="card md-4">
+        <div class="card-body">
+    
+          <h4>Cadastro de Restaurantes </h4>
+          <p>Preencha as informaações do Restaurante que está avaliando</p>
+
+          <%= f.input :business_establishment,  collection: human_attribute_establishment_types  %>
+          <%= f.input :name, placeholder: 'Nome do estabelecimento ', required: :true %>
+          <%= f.input :environment, placeholder: 'Ponto de referencia do estabelecimento  ', required: :true %>
+          <%= f.input :comfort_classification, placeholder: 'Ponto de referencia do estabelecimento  ', required: :true %>
+          <%= f.input :contact, placeholder: 'Contato do estabelecimento ', required: :true %>
+          <%= f.input :email, placeholder: 'Email do estabelecimento  ', required: :true %>
+          <%= f.input :address, placeholder: 'Endereço do estabelecimento  ', required: :true %>
+          <%= f.input :cep, placeholder: 'Endereço do estabelecimento  ', required: :true, input_html: { value: '06327320' } %>
+          <%= f.input :street, placeholder: 'Endereço do estabelecimento  ', required: :true %>
+          <%= f.input :complement, placeholder: 'Endereço do estabelecimento  ', required: :true %>
+          <%= f.input :number_address, placeholder: 'Endereço do estabelecimento  ', required: :true %>
+          <%= f.input :state, placeholder: 'Endereço do estabelecimento  ', required: :true %>
+          <%= f.input :nationality, placeholder: 'Endereço do estabelecimento  ', required: :true %>
+          <%= f.input :city, placeholder: 'Endereço do estabelecimento  ', required: :true %>
+          <%= f.input :final_note, placeholder: 'Nota Final do estabelecimento ', required: :true %>
+          <%= f.input :geolocalization, placeholder: 'Localização do estabelecimento  ', required: :true %>
+          <%= f.input :reference_point, placeholder: 'Ponto de referencia do estabelecimento  ', required: :true %>
+          <%= f.input :owner, placeholder: 'Dono do estabelecimento  ', required: :true %>
+          <%= f.input :telephone, placeholder: 'Telefone do estabelecimento  ', required: :true %>
+          <%= f.input :reservation_phone, placeholder: 'Telefone reserva do estabelecimento  ', required: :true %>
+          <%= f.input :comments, placeholder: 'Comentario sobre o estabelecimento  ', required: :true %>
+          <%= f.input :final_comment, placeholder: 'Descriçao do item', required: :true %>
+          <%= f.input :business_establishment, as: :check_boxes, collection: human_attribute_establishment_types, input_html: {multiple: true} %>
+           
+
+          <% 
+              address = finder.get('06327320')
+              teste = address
+              teste[:city]
+           %> 
+          <%= f.input :active, as: :radio_buttons, required: :true, boolean_style: :inline  %>    
+          <div class="btn-group">
+            <%= f.button :submit ,"Gravar" , class: "btn -btn-primary"   %>
+            <%= f.button :button, "Cancelar", type: "reset", class: "btn btn-danger" %>    
+          </div>          
+
+
+        </div>
+      </div>
+    </div>
+
+<% end %>

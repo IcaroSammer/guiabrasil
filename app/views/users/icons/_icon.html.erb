@@ -1,0 +1,11 @@
+<tr>
+  <td><%= icon.name %></td>
+  <td><%= icon.description %></td>
+  <td><%= icon.active %></td>
+  
+  <td><%= link_to 'Mostrar', user_icon_path(icon) %></td>
+  <td><%= link_to 'Editar', edit_user_icon_path(icon) %></td>
+  <td><%= link_to 'Inativar', user_icon_path(icon),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+</tr>

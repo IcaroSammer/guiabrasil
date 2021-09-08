@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, @accommodation_size] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Novo Porte da Acomodação</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Porte da acomodação ativo ?" %>
+      <%= f.input :name, placeholder: 'Nome do porte da acomodação ', required: :true %>  
+      <%= f.input :description, placeholder: 'Descrição do porte da acomodação ' %>  
+      <%= f.input :number_of_guest, placeholder: 'Quantidade de hóspede ' %>  
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+<% end %>
+

@@ -1,0 +1,26 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Prato #{@main_course.name} " %> 
+      		<%= edit_resource edit_user_main_course_path(@main_course) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= MainCourse.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @main_course.active %><br>
+            <b><%= MainCourse.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @main_course.name %><br>
+            <b><%= MainCourse.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @main_course.description %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: user_main_courses_path) %>
+    
+  
+  </footer>

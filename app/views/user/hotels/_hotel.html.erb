@@ -1,0 +1,22 @@
+<tr>
+
+  <td>
+    <%= hotel.establishment.name %>
+  </td>
+  <td>
+    <%= hotel.category %>
+  </td>
+  <td>
+    <%= hotel.final_score_evaluation %>
+  </td>
+  <td>
+    <%= AccommodationType.where(id: hotel.type_of_accomodation).pluck(:name) %>
+  </td>
+  <td>
+  	  <%= link_to raw('<i class="far fa-newspaper" style="color:gray"></i>'), new_user_publication_path(id: hotel.establishment.id) %>
+      <%= link_to raw('<i class="fas fa-eye" style="color:green"></i>'), user_hotel_path(hotel) %>
+      <%= link_to raw('<i class="fas fa-edit" style="color:blue"></i>'), edit_user_hotel_path(hotel) %>
+      <%= link_to raw('<i class="fas fa-times" style="color:red"></i>'), user_hotel_path(hotel), method: :delete, data: { confirm: 'Are you sure?'} %>
+</td>
+
+</tr>

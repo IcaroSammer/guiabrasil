@@ -1,0 +1,19 @@
+<tr>
+  <td><%= icon.name %></td>
+  <td><%= icon.business_establishment %></td>
+  <td><%= icon.active %></td>
+  <td>
+    <%= show_resource_with_icon admin_icon_path(icon) %>
+    <%= edit_resource edit_admin_icon_path(icon) %>
+    <% if icon.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_icon_path(icon),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_icon_path(icon),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

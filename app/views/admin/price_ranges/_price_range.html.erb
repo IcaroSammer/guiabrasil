@@ -1,0 +1,24 @@
+<tr>
+  <td><%= price_range.id %></td>
+  <td><%= price_range.range_init %></td>
+  <td><%= price_range.range_end %></td>
+  <td><%= price_range.description %></td>
+  <td><%= price_range.business_establishment %></td>  
+  <td><%= price_range.active %></td>  
+
+  <td>
+    <%= show_resource_with_icon admin_price_range_path(price_range) %>
+    <%= edit_resource edit_admin_price_range_path(price_range) %>
+    <%# remove_resource(admin_price_range_path(price_range), {})%>
+    <% if price_range.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_price_range_path(price_range),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_price_range_path(price_range),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

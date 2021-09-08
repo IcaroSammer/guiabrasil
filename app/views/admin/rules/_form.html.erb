@@ -1,0 +1,18 @@
+<%= simple_form_for [:admin, @rule] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Nova Categoria de conforto</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Categoria ativa ?" %>
+      <%= f.input :name, placeholder: 'Nome da categoria ', required: :true %>    
+      <%= f.input :business_establishment, as: :check_boxes, collection: human_attribute_establishment_types, input_html: {multiple: true} %>
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

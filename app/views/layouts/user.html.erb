@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Área do Repórter</title>
+	<%= csrf_meta_tags %>
+	<%= csp_meta_tag %>
+	<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+	
+	<% if notice.present? %>	
+	<p class = "notice" ><%= notice %> </p>
+	<% end %>
+	<% if alert.present? %>	
+	<p class = "alert" ><%= alert %></p>
+	<% end %>
+
+	<div class="d-flex" id="wrapper">
+		<%= render partial: 'layouts/user/sidebar' %>
+		<div id="page-content-wrapper">
+			<%= render partial: "layouts/user/navbar" %>
+			<div class="container-fluid">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+	<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>

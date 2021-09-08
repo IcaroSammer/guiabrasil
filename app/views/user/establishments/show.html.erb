@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="row justify-content-center mb-3">
+        <div class="card mb-4">
+          <div class="card-body">
+          	<h4> <%= "Estabelecimento #{@establishment.name} " %> 
+                <%= edit_resource edit_user_establishment_path(@establishment) %>
+  	         </h4>
+           <br>
+            <b><%= Establishment.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @establishment.active %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:environment) %>:&nbsp;</b>
+            <%= @establishment.environment %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:comfort_classification) %>:&nbsp;</b>
+            <%= @establishment.comfort_classification %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:final_comment) %>:&nbsp;</b>
+            <%= @establishment.final_comment %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:contact) %>:&nbsp;</b>
+            <%= @establishment.contact %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:email) %>:&nbsp;</b>
+            <%= @establishment.email %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:address) %>:&nbsp;</b>
+            <%= @establishment.address %><br>
+            <br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:cep) %>:&nbsp;</b>
+            <%= @establishment.address %><br>
+            <br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:street) %>:&nbsp;</b>
+            <%= @establishment.address %><br>
+            <br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:complement) %>:&nbsp;</b>
+            <%= @establishment.address %><br>
+            <br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:number_address) %>:&nbsp;</b>
+            <%= @establishment.address %><br>
+            <br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:city) %>:&nbsp;</b>
+            <%= @establishment.address %><br>
+            <br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:state) %>:&nbsp;</b>
+            <%= @establishment.address %><br>
+            <br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:nationality) %>:&nbsp;</b>
+            <%= @establishment.address %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @establishment.name %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:final_note) %>:&nbsp;</b>
+            <%= @establishment.final_note %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:geolocalization) %>:&nbsp;</b>
+            <%= @establishment.geolocalization %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:reference_point) %>:&nbsp;</b>
+            <%= @establishment.reference_point %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:owner) %>:&nbsp;</b>
+            <%= @establishment.owner %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:telephone) %>:&nbsp;</b>
+            <%= @establishment.telephone %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:reservation_phone) %>:&nbsp;</b>
+            <%= @establishment.reservation_phone %><br>
+            <br>
+            <b><%= Establishment.human_attribute_name(:comments) %>:&nbsp;</b>
+            <%= @establishment.comments %><br>
+            <br>
+            <%= link_to "Voltar", user_establishments_path, class: "btn btn-secondary"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>    

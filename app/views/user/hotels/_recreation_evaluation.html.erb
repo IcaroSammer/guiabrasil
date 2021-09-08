@@ -1,0 +1,20 @@
+<%= f.fields_for :hotel_survey do |ff| %>
+
+<div class="multiselect">
+	<div class="selectBox" onclick="showCheckboxeseRecreationArea()">
+		<select class="browser-default custom-select custom-select-lg mb-3">
+			<option>Áreas de Lazer</option>
+		</select>
+		<div class="overSelect"></div>
+	</div>
+
+	<div id="recreation_area">
+
+		<%= render partial: 'user/hotel_surveys/recreation' , locals: {f: ff}  %>
+		<%= f.input :recreation_area,  as: :check_boxes ,collection: RecreationArea.all, input_html: {multiple: true }, class: "form-control" %>
+	</div>
+</div>
+<hr>
+<% end %>
+
+

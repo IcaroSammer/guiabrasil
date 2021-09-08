@@ -1,0 +1,26 @@
+
+  
+<div class="card">
+	<div class="card-header"><strong>Fotos Anexadas</strong></div>
+	<div class="card-body">
+
+		<% if f.object.photos.attached? %>
+			<div class="row">
+			<% f.object.photos.each do |photo| %>
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header"></div>
+					<div class="card-body">
+
+						<%= image_tag(photo,  class: "rounded img_card_size")%>
+
+					</div>
+
+				</div>
+			</div>
+				<% end %>
+		</div>
+		<% end %>
+	</div>
+</div>
+<hr>

@@ -1,0 +1,215 @@
+@import "loldesign_publisher/base";
+
+// Colors
+$blue: #477dca;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+$gondola: #281627;
+$chamaotio: #11a199;
+$mantle: #319DD1;
+$rolling-stone: #808183;
+$button-active-color: #789E91;
+$button-base-color: #2B1024;
+
+nav.main{
+  width: 15%;
+};
+
+.login {
+
+  .container {
+    text-align-last: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    height: 100%;
+    top: 30%;
+    left: 05%;
+  }
+  .mask {
+    background: rgba($chamaotio, 0.79);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .wrapper-form {
+    position: fixed;
+    width: 40%;
+    height: 500px;
+    padding: 40px;
+    border-radius: 3px;
+    .logo{
+      img {
+          width: 30%;
+        }
+    }
+  }
+
+
+.login{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  float: left;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  &.admin {
+    background: image-url("background.jpg") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  form{
+    label {
+      color: white;
+    }
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  h2{
+    @include grid(8);
+    @include push(6);
+    font-weight: $normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    clear: left;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password']{
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    font-size: 18px;
+  }
+
+  input[type='checkbox']{
+    margin-right: 10px;
+  }
+
+  input[type='submit']{
+    margin: 25px auto;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    text-transform: uppercase;
+    line-height: 50px;
+    height: 50px;
+    width: 150px;
+    padding: 0;
+    background: $mantle;
+    float: none;
+    display: block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+  }
+
+  .messages{
+    width: 100;
+    clear: left;
+    padding: 5px 5px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 12px;
+
+    &.alert{
+      color: #a94442;
+      background-color: #f2dede;
+      border-color: #ebccd1;
+    }
+  }
+  .img-background {
+    img {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+    }
+  }
+}
+
+.linkedin-btn{
+  margin: 25px auto;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+  text-transform: uppercase;
+  line-height: 50px;
+  height: 50px;
+  width: 150px;
+  padding: 0;
+  background: #319DD1;
+  float: none;
+  display: block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-btn{
+
+}
+
+.login-methods{
+  display: flex;
+  flex-direction: row;
+
+  & a:first-of-type{
+    margin-right: 10px;
+  }
+
+  &_btn-form{
+    background: #319DD1;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    display: block;
+    flex: 1;
+    float: none;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+    margin: 0 auto;
+    outline: none;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &_btn-linkedin{
+    background: #319DD1;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    display: block;
+    flex: 1;
+    float: none;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+    margin: 0 auto;
+    outline: none;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+};

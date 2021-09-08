@@ -1,0 +1,2 @@
+module User::CitiesHelper
+end

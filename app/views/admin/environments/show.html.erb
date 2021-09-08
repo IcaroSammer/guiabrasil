@@ -1,0 +1,24 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Categoria de Ambiente #{@environment.name} " %> 
+      		<%= edit_resource edit_admin_environment_path(@environment) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Environment.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @environment.active %><br>
+            <b><%= Environment.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @environment.name %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_environments_path) %>
+    
+  
+  </footer>

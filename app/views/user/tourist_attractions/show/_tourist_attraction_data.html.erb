@@ -1,0 +1,61 @@
+<div class="card">
+	<div class="card-header"><strong>Informações da Atração Turística</strong></div>
+	<div class="card-body">
+
+
+		<div class="form-group row">
+			<div class="col-md-2">
+				<%= f.input :active, as: :radio_buttons, required: :true, class: "form-control", readonly: true %>
+			</div>
+			<div class="col-md-6">
+				<%= f.input :interest_score, collection: ["Sem Estrela","1 - Estrela","2 - Estrelas","3 - Estrelas","4 - Estrelas","5 - Estrelas"], required: :true, class: "form-control", readonly: true %>
+			</div>
+		</div>
+			<div class="form-group row">
+			<div class="col-md-3">
+				
+				<%= f.input :classification_order , class: "form-control", readonly: true %>
+			</div>
+
+			<div class="col-md-9">
+				<%= f.input :comment, as: :text,  class: "form-control", readonly: true %>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-md-3">
+				<%= f.input :start_hour, as: :time, html5: true , class: "form-control", readonly: true %>
+			</div>
+
+			<div class="col-md-3">
+				<%= f.input :end_hour, as: :time, html5: true, class: "form-control", readonly: true  %>
+			</div>
+
+		</div>
+		
+		<hr>
+		<div class="form-group row">
+			<div class="col-md-8">
+				<%= f.input :price,  class: "form-control", type: "currency", readonly: true %>
+				<%= f.input :price_comments, as: :text, placeholder: 'Comentario sobre preços da atração turística ', required: :true, class: "form-control", readonly: true %>
+			</div>
+			<div class="col-md-4">
+				<%= f.input :payments_form, as: :check_boxes, 
+				collection:  FormPayment.where("business_establishment @> ?", '{HOTEIS}'), 
+				checked: FormPayment.where(id: f.object.payments_form).pluck(:id), 
+				input_html: {multiple: true }, class: "form-control", readonly: true %>
+			</div>                  
+		</div>  
+		<hr>
+		<div class="form-group row">
+			<div class="col-md-6">
+				<%= f.input :type_attraction,
+				 collection: TypeAttraction.where(active: true).collect { |pr| [pr.name, pr.id] },
+				 checked: TypeAttraction.where(id: f.object.type_attraction).pluck(:id), 
+				 class: "form-control"  %>
+				 	 <% TypeAttraction.where(id: f.object.type_attraction).pluck(:name).each do |ta|%>
+				 	 <%= ta %>
+				 	 <%end%>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<%= simple_form_for [:admin, @recreationarea] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Nova categoria recriação</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Item ativado ?" %>
+      <%= f.input :name, placeholder: 'Nome da categoria ', required: :true %>
+      <%= f.input :description, placeholder: 'Descrição da categoria ', required: :true %>    
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

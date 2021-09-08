@@ -1,0 +1,21 @@
+
+<%= title_page "Especialidades" %>
+
+<%= add_resource "Nova especialidade", new_user_speciality_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_user_specialities_path, resource: Speciality } %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= Speciality.human_attribute_name(:name) %></th>
+      <th><%= Speciality.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@specialities, fields: 12) %>
+  </tbody>
+</table>
+
+<%= will_paginate @specialities %>

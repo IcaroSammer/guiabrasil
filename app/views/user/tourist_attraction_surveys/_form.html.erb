@@ -1,0 +1,103 @@
+<!-- NOVO / EDICAO -->
+<%= simple_form_for [:user, @tourist_attraction_survey]  do |f|%>
+  <%= f.error_notification %>
+  
+
+    <% if @tourist_attraction_survey.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% @tourist_attraction_survey.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div> 
+      <% if !f.object.tourist_attraction_id.present? %>
+        <!-- Novo -->
+        <%= f.hidden_field :tourist_attraction_id, value: params[:tourist_attraction_id] %>
+      <% end %>	
+    </div>
+Novo/ EDICAO
+    <div class="container-md">
+        <div class="card">
+        <% if !f.object.tourist_attraction_id.present? %>
+        NOVO<div class="card-header"><strong>Avaliação da Atração Turística</strong></div>
+        <% else %>
+			  <div class="card-header"><strong>Avaliação da Atração Turística -  <%= TouristAttraction.find(params[:tourist_attraction_id].present? ? params[:tourist_attraction_id] : f.object.tourist_attraction_id).establishment.name %></strong></div>
+        
+
+        <% end %>
+
+		    <div class="card-body">
+          <div class="row form-group">
+            <div class="col-md-3">
+              <%= f.input :active  %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-3">
+              <%= f.label :survey_date, class: "col-form-label" %>:
+
+              <% if f.object.survey_date.present? %>
+              <%= f.date_field :survey_date , class: "form-control datepicker", type: "date" , required: :true %>
+              <% else %>
+              <%= f.text_field :survey_date , class: "form-control datepicker", type: "date" , required: :true%>
+              <% end %>
+            </div>
+          </div>
+         
+          <%= render partial: 'signage', locals: {f: f}  %>
+          <%= render partial: 'conservation', locals: {f: f}  %>
+          <%= render partial: 'accessibility', locals: {f: f}  %>
+          <%= render partial: 'local_tour_guides', locals: {f: f}  %>																
+          <%= render partial: 'kindness', locals: {f: f}  %>
+          <%= render partial: 'beauty', locals: {f: f}  %>
+          <%= render partial: 'infrastructure', locals: {f: f}  %>
+          <%= render partial: 'historical_importance', locals: {f: f}  %>																
+          <%= render partial: 'artistic_importance', locals: {f: f}  %>
+          <%= render partial: 'architectural_importance', locals: {f: f}  %>
+          <%= render partial: 'natural_importance', locals: {f: f}  %>
+          <%= render partial: 'cultural_importance', locals: {f: f}  %>																
+          <%= render partial: 'economic_importance', locals: {f: f}  %>
+          <%= render partial: 'interest', locals: {f: f}  %>
+          <%= render partial: 'sort_order_by_destination', locals: {f: f}  %>
+          <%= render partial: 'shopping', locals: {f: f}  %>
+          <%= render partial: 'events', locals: {f: f}  %>
+          <%= render partial: 'cultural_centers', locals: {f: f}  %>
+          <%= render partial: 'historical_buildings', locals: {f: f}  %>
+          <%= render partial: 'strong', locals: {f: f}  %>
+          <%= render partial: 'churches', locals: {f: f}  %>
+          <%= render partial: 'museums', locals: {f: f}  %>
+          <%= render partial: 'parks', locals: {f: f}  %>
+          <%= render partial: 'state_parks', locals: {f: f}  %>
+          <%= render partial: 'national_parks', locals: {f: f}  %>
+          <%= render partial: 'thematic_parks', locals: {f: f}  %>
+          <%= render partial: 'tours', locals: {f: f}  %>
+          <%= render partial: 'beaches', locals: {f: f}  %>
+          <%= render partial: 'beach_tents', locals: {f: f}  %>
+          <%= render partial: 'adventure_tourism', locals: {f: f}  %>         
+          <%= render partial: 'final', locals: {f: f}  %>
+        </div>
+		</div>
+    
+    <div class="card-footer">
+		  <%= button_tag(type: "submit", class: "btn btn-sm btn-success", disable_with: "gravando...") do %>
+		  <i class="fas fa-cloud-upload-alt"></i> Salvar
+      <% end %>
+      
+      <% if !f.object.tourist_attraction_id.present? %>
+      <!--novo  --> 
+      <%= link_to raw('<i class="far fa-window-close"></i> Cancelar'), user_tourist_attraction_surveys_path(tourist_attraction_id:  params[:tourist_attraction_id]), class: "btn btn-sm btn-danger" %>  
+      
+      <% else %>
+      <!--edicao  --> 
+      <%= link_to raw('<i class="far fa-window-close"></i> Cancelar'), user_tourist_attraction_surveys_path(tourist_attraction_id: f.object.tourist_attraction_id), class: "btn btn-sm btn-danger" %>  
+    <% end %>	
+      
+
+
+		</div>
+<% end %>

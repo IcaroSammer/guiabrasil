@@ -1,0 +1,61 @@
+<div class="card">
+	<div class="card-header"><strong>Informações do Restaurante</strong></div>
+	<div class="card-body">
+
+
+		<div class="form-group row">
+			<div class="col-md-3">
+				<%= f.input :active,readonly: true, as: :radio_buttons, required: :true, class: "form-control" %>
+			</div>
+
+			<div class="col-md-3">
+				<%= f.input :quant_start ,readonly: true, collection: 0..5, input_html: {class: "form-control", disabled: true}  %>
+			</div>
+
+			<div class="col-md-3">
+				<%= f.input :star_hour,readonly: true, as: :time, html5: true , class: "form-control" %>
+			</div>
+
+			<div class="col-md-3">
+				<%= f.input :end_hour,readonly: true, as: :time, html5: true, class: "form-control" %>
+			</div>
+
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-6">
+				<%= f.input :comment,readonly: true, placeholder: 'Comentario sobre o estabelecimento  ', required: :true, class: "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-4">
+				<%= f.input :classification_order , readonly: true, collection: 0..5, input_html: {class: "form-control", disabled: true}  %>
+			</div>
+		</div> 
+		
+		<div class="form-group row">
+			<div class="col-md-8">
+				<% if f.object.price_range.present? %>
+
+				Faixa de Preço: <%= PriceRange.find(f.object.price_range).description %>
+				<% else %>
+				Faixa de preço : Não cadastrada
+				<%end%>
+				
+				<%# f.input :price_range,readonly: true, collection: PriceRange.where("business_establishment @> ?", '{RESTAURANTES}').collect { |pr| [pr.description, pr.id] }, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= f.input :payments_form, readonly: true, as: :check_boxes, 
+				collection:  FormPayment.where("business_establishment @> ?", '{RESTAURANTES}'), 
+				checked: FormPayment.where(id: f.object.payments_form).pluck(:id), 
+				input_html: {multiple: true }, input_html: {class: "form-control", disabled: true}  %>
+			</div>                  
+		</div>  
+
+
+	</div>
+</div>
+
+<!-- colocar campo final_comment na tabela !--> 
+

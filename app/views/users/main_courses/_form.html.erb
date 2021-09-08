@@ -1,0 +1,19 @@
+<%= simple_form_for [:usuario, @main_course] do |f| %>
+<%= f.error_notification %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Novo Prato</h2>
+    </header>
+     <article>
+      <%= f.input :name, placeholder: 'Nome prato ', required: :true %>
+      <%= f.input :description, placeholder: 'Descrição do prato ', required: :true %>
+      <%= f.input :active, placeholder: 'Ativo ? ', required: :true %>  
+      <%= f.input :ingredients, input_html: {multiple: true} %>
+  </section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

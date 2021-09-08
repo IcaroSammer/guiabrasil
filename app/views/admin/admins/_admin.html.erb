@@ -1,0 +1,10 @@
+<tr>
+	<td><%= admin.name %></td>
+	<td><%= admin.email %></td>
+	<td><%= admin.phone_number %></td>    
+	<td>
+		<%= show_resource_with_icon admin_admin_path(admin) %>
+		<%= edit_resource edit_admin_admin_path(admin) %>
+		<%= remove_resource(admin_admin_path(admin), {})%>
+	</td>
+</tr>

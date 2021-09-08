@@ -1,0 +1,46 @@
+<%= simple_form_for [:admin, @enterprise] do |f| %>
+<%= f.error_notification %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Cadastro Empresas</h2>
+    </header>
+     <article>
+      
+       <%= f.input :name, placeholder: 'Nome da empresa', required: :true %>
+    	<%= f.input :nick_name, placeholder: 'Nome fantasia', required: :true %>
+    	<%= f.input :cnpj, placeholder: 'CNPJ', required: :true %>
+    	<%= f.input :foundation_date, placeholder: 'Data de fundação', required: :true %>
+    	<%= f.input :economic_activity_code, placeholder: 'Código atividade econômica', required: :true %>
+    	<%= f.input :economic_activity_description, placeholder: 'Descrição da atividade econômica', required: :true %>
+    	<%= f.input :company_size, placeholder: 'Tamanho da empresa', required: :true %>
+    	<%= f.input :secondary_economic_activities_code, placeholder: 'Atividade secundária da empresa', required: :true %>
+    	<%= f.input :secondary_economic_activities_description, placeholder: 'Descrição da atividade secundária da empresa ', required: :true %>
+    	<%= f.input :legal_nature_code, placeholder: 'CNAE', required: :true %>
+    	<%= f.input :legal_nature_description, placeholder: 'Descrição CNAE', required: :true %>
+    	<%= f.input :address, placeholder: 'Endereço', required: :true %>
+    	<%= f.input :address_complement, placeholder: 'Complemento', required: :true %>
+    	<%= f.input :address_number, placeholder: 'Número', required: :true %>
+    	<%= f.input :neighbohood, placeholder: 'Bairo', required: :true %>
+    	<%= f.input :zip_code, placeholder: 'CEP', required: :true %>
+    	<%= f.input :city, placeholder: 'Cidade', required: :true %>
+    	<%= f.input :state, placeholder: 'Estado', required: :true %>
+    	<%= f.input :country_code, placeholder: 'Código do país', required: :true %>
+    	<%= f.input :country, placeholder: 'País', required: :true %>
+    	<%= f.input :phone_number, placeholder: 'Telefone', required: :true %>
+    	<%= f.input :mobile_phone_number, placeholder: 'Celular', required: :true %>
+    	<%= f.input :active, placeholder: 'Ativo?', required: :true %>
+    	<%= f.input :email, placeholder: 'E-mail', required: :true %>
+    	<%= f.input :enterprise_type, placeholder: 'Tipo de empresa', required: :true %>
+    	<%= f.input :group_company, placeholder: 'Grupo', required: :true %>
+    	<%= f.input :business_partner, placeholder: 'Sócio', required: :true %>
+    	
+  </section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>
+
+		

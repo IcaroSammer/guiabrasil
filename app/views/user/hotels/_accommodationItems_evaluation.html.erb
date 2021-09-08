@@ -1,0 +1,21 @@
+<%= f.fields_for :hotel_survey do |ff| %>
+
+<div class="multiselect">
+        <div class="selectBox"  onclick="showCheckboxeseAccommodationItem()">
+          <select class="browser-default custom-select custom-select-lg mb-3">
+            <option>Item de acomodação</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div id="accommodation_item" >
+        	<%= render partial: 'user/hotel_surveys/accommodation' , locals: {f: ff}  %>
+          <%= f.input :accommodation_item,  as: :check_boxes ,collection: AccommodationItem.all,
+            checked: AccommodationItem.where(id: f.object.accommodation_item).pluck(:id),
+           input_html: {multiple: true }, class: "form-control" %>
+        </div>
+
+
+</div>
+<hr>
+<% end %>
+

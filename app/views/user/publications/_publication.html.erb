@@ -1,0 +1,12 @@
+<tr>
+  <td><%= publication.name %></td>
+  <td><%= publication.description %></td>
+  <td><%= publication.tag %></td>
+  <td><%= publication.active %></td>
+  
+  <td><%= link_to 'Mostrar', user_publication_path(publication) %></td>
+  <td><%= link_to 'Editar', edit_user_publication_path(publication) %></td>
+  <td><%= link_to 'Inativar', user_publication_path(publication),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+</tr>

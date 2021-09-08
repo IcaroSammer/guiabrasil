@@ -1,0 +1,16 @@
+<tr>
+  <td><%= customer.profile.name %></td>
+  <td><%= customer.email%></td>
+  <td><%= customer.profile.active %></td>
+
+  <td>
+    <%= show_resource_with_icon admin_customer_path(customer) %>
+    <%= edit_resource edit_admin_customer_path(customer) %>
+    
+
+  </td>
+
+
+
+
+</tr>

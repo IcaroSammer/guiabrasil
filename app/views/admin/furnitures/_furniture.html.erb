@@ -1,0 +1,17 @@
+<tr>
+  <td><%= furniture.name %></td>
+  <td><%= furniture.description %></td>
+  <td><%= furniture.dimension %></td>
+  <td><%= furniture.rooms %></td>
+  <td>
+    <%= show_resource_with_furniture admin_furniture_path(furniture) %>
+    <%= edit_resource edit_admin_furniture_path(furniture) %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_furniture_path(furniture),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_furniture_path(furniture),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  </td>
+</tr>

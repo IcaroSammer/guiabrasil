@@ -1,0 +1,35 @@
+
+<%= simple_form_for [:user, @hotel] do |f|%>
+
+<div class="container-md">
+ <div class="card">
+  <div class="card-header"><strong>Hotel</strong>
+    <div class="float-right">
+        <strong><%= f.object.establishment.name %> </strong>
+    </div>
+
+  </div>
+  <div class="card-body">
+
+      <%= render partial: 'user/hotels/show/establishment', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/accomodation_evaluation', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/ambience_evaluation', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/hotel_data', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/classification', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/survey', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/socialNetworks', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/photos', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/videos', locals: {f: f}  %>
+      <%= render partial: 'user/hotels/show/documents', locals: {f: f}  %>
+
+
+</div>
+  <div class="card-footer">
+        <%= link_to raw('<i class="far fa-window-close"></i> Voltar'), user_hotels_path, class: "btn btn-sm btn-danger" %>  
+  </div>
+
+
+</div>
+</div>
+
+<% end %>

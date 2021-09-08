@@ -1,0 +1,23 @@
+<%= title_page "Categorias de Áreas de recreação" %>
+
+<%= add_resource "Categoria de recreação", new_admin_recreation_area_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_recreation_areas_path, resource: RecreationArea } %>
+
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= RecreationArea.human_attribute_name(:name) %></th>
+      <th><%= RecreationArea.human_attribute_name(:description) %></th>
+      <th><%= RecreationArea.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@recreation_areas, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @recreation_area %>

@@ -1,0 +1,28 @@
+<%= simple_form_for [:user, @speciality], 
+  wrapper_mappings: {
+    check_boxes:    :vertical_collection,
+    radio_buttons:  :vertical_collection,
+    file:           :custom_file,
+    boolean:        :custom_boolean_switch
+  }  do |f|%>
+  <%= f.error_notification %>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="row justify-content-center mb-3">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4>Cadastro de Especialidades </h4>
+
+            <p>Preencha Preencha o Cadastro do Chefe do estavelecimento que está avaliando</p>
+        	<%= f.input :name  %>
+            <%= f.input :active, as: :radio_buttons, required: :true %> 
+            <%= f.button :submit ,"Enviar" , class: "btn-primary"   %>
+            <%= f.button :button, "Cancelar", type: "reset", class: "btn-outline-secondary" %>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>

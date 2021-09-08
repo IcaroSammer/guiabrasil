@@ -1,0 +1,25 @@
+button, 
+a {
+  &.btn {
+    padding: 10px 40px;
+    border-radius: 12px;
+    border: 2px solid $light-green;
+
+    &--default {
+      background: $light-green;
+      color: $white;
+    }
+
+    &--bordered {
+      background: $white;
+      color: $light-green;
+    }
+  }
+
+  &.align-center {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 25%;
+  }
+}

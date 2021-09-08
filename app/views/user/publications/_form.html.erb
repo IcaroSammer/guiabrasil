@@ -1,0 +1,35 @@
+<script> javascript_include_tag Ckeditor.cdn_url </script>
+<%= simple_form_for [:user, @publication]  do |f|%>
+<%= f.error_notification %>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="row justify-content-center mb-3">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4>Cadastro de Publicações </h4>
+            <p>Preencha Preencha publicações referentes ao estabelecimento que está avaliando</p>
+            <%= f.error_notification %>
+            <div style="display: none">
+              <%= f.input :name, placeholder: 'Nome do icone ', required: :true %>
+            </div>
+            <%= f.input :establishment_id, input_html: { value: params[:id] }  %>
+            <%= f.cktext_area :description,  placeholder: 'Comment', class: 'form-control textarea-vertical',  ckeditor: { toolbar: [], removePlugins: 'elementspath', resize_enabled: false, height: 100, toolbarLocation: 'none' } %>
+            <%= f.button :button, "Adicionar", type: "button", :id => 'addTag' ,class: "add-email-button" %>
+            <%= f.input :tag, as: :array %>
+            <%# f.input :tag, input_html: {multiple: true} %>
+            <%= f.input :active, as: :radio_buttons, required: :true %> 
+            <%= f.label :image, "Selecione as imagens da publicação" %><br>
+            <%= f.file_field :image, multiple: true %><br><br>
+
+
+            <%= f.button :submit ,"Enviar" , class: "btn-primary"   %>
+            <%= f.button :button, "Cancelar", type: "reset", class: "btn-outline-secondary" %>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>
+

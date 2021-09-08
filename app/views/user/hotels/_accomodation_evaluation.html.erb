@@ -1,0 +1,20 @@
+<div class="multiselect">
+  <div class="selectBox" onclick="showCheckboxeseAccommodationType()">
+    <select class="browser-default custom-select custom-select-lg mb-3">
+      <option>Hospedagens</option>
+    </select>
+    <div class="overSelect"></div>
+  </div>
+  <div id="atype_of_accomodation">
+    <div class="row form-group">
+      <div class="col-md-6">
+        <%= f.input :type_of_accomodation,  as: :check_boxes ,collection: AccommodationType.where(active: true),
+          checked: AccommodationType.where(id: f.object.type_of_accomodation).pluck(:id),
+         input_html: {multiple: true }, class: "form-control" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :differentials,  as: :check_boxes ,collection: ["Charme", "Conceitual", "Histórico", "Lgbti", "Pet Friendly", "Selo Verde", "Selo custo-benefício"], input_html: {multiple: true }, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+</div>

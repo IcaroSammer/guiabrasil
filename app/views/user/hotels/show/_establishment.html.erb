@@ -1,0 +1,126 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<%= f.fields_for :establishment do |ff| %>
+<div class="card">
+  <div class="card-header"><strong>Dados do Estabelecimento</strong></div>
+  <div class="card-body">
+
+
+    <div class="form-group row">
+      <div class="col-md-12">
+        <%= ff.input :name, placeholder: 'Nome do estabelecimento ', required: :true, class: "form-control", readonly: true %>
+      </div>   
+    </div>
+    
+
+    <div class="form-group row">
+      <div class="col-md-6">
+        <%= f.input :category, required: :true, class: "form-control", readonly: true %>
+      </div>   
+
+      <div class="col-md-6" >
+       <%= f.input :final_score_evaluation, readonly: true, class: "form-control" %>
+     </div>  
+   </div>
+
+
+   <div class="form-group row">
+    <div class="col-md-6">
+      <%= ff.input :contact, label: 'Contato ', required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+    <div class="col-md-6">
+      <%= ff.input :email, label: 'Email do estabelecimento  ', required: :true, class: "form-control", readonly: true %>
+    </div>   
+  </div>
+
+
+  <div class="form-group row">
+
+    <div class="col-md-3">
+      <%= ff.input :nationality, label: "País", class: "form-control", readonly: true %>
+    </div>  
+
+    <div class="col-md-3">
+      <%= ff.input :cep, label: 'CEP', required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+
+    <div class="col-md-3">
+      <%= ff.input :number_address, label: 'Número  ', required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+    <div class="col-md-3">
+      <%= ff.input :complement, label: 'Complemento  ', required: :true, class: "form-control", readonly: true %>
+    </div>   
+  </div> 
+
+
+
+  <div class="form-group row">
+    <div class="col-md-3">
+      <%= ff.input :address,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+    <div class="col-md-3">
+      <%= ff.input :city,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+    <div class="col-md-3">
+      <%= ff.input :neighborhood,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+    <div class="col-md-3">
+      <%= ff.input :state,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-6">
+      <%= ff.input :geolocalization, placeholder: 'geolocalização  ', required: :true, class: "form-control", readonly: true %>
+    </div>   
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-6">
+      <%= ff.input :reference_point, required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+    <div class="col-md-6">
+      <%= ff.input :owner,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-6">
+      <%= ff.input :telephone,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+
+    <div class="col-md-6">
+      <%= ff.input :reservation_phone,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-6">
+      <%= ff.input :comments,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+
+
+    <div class="col-md-6">
+      <%= ff.input :final_comment,  required: :true, class: "form-control", readonly: true %>
+    </div>   
+  </div>
+
+
+
+
+
+  
+</div>
+</div>
+
+
+<% end %>

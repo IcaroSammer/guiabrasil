@@ -1,0 +1,71 @@
+<!-- VIEW -->
+<%= simple_form_for [:user, @tourist_attraction_survey] do |f|%>
+VIEW
+  <div class="container-md">
+     <div class="card">
+      <div class="card-header">
+        <strong> Avaliação da Atração Turística - 
+                                   
+        <%= TouristAttraction.find( f.object.tourist_attraction_id).establishment.name %></strong>
+      </div>
+
+      <div class="card-body">
+      <div class="row form-group">
+        <div class="col-md-3">
+          <%= f.input :active  %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-3">
+          <%= f.label :survey_date, class: "col-form-label" %>:
+
+          <% if f.object.survey_date.present? %>
+          <%= f.date_field :survey_date , class: "form-control datepicker", type: "date" %>
+          <% else %>
+          <%= f.text_field :survey_date , class: "form-control datepicker", type: "date" %>
+          <% end %>
+        </div>
+      </div>
+
+        <%= render partial: 'user/tourist_attraction_surveys/show/signage', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/conservation', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/accessibility', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/local_tour_guides', locals: {f: f}  %>																
+        <%= render partial: 'user/tourist_attraction_surveys/show/kindness', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/beauty', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/infrastructure', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/historical_importance', locals: {f: f}  %>																
+        <%= render partial: 'user/tourist_attraction_surveys/show/artistic_importance', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/architectural_importance', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/natural_importance', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/cultural_importance', locals: {f: f}  %>																
+        <%= render partial: 'user/tourist_attraction_surveys/show/economic_importance', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/interest', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/sort_order_by_destination', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/shopping', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/events', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/cultural_centers', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/historical_buildings', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/strong', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/churches', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/museums', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/parks', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/state_parks', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/national_parks', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/thematic_parks', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/tours', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/beaches', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/beach_tents', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/adventure_tourism', locals: {f: f}  %>
+        <%= render partial: 'user/tourist_attraction_surveys/show/final', locals: {f: f}  %>
+    </div>
+  </div>
+      
+    <div class="card-footer">
+      <%= link_to raw('<i class="far fa-window-close"></i> Voltar'), user_tourist_attraction_surveys_path(tourist_attraction_id: f.object.tourist_attraction_id), class: "btn btn-sm btn-danger" %>  
+    </div>
+        
+    
+<% end %>
+    

@@ -1,0 +1,2 @@
+class CommfortClassification < ApplicationRecord
+end

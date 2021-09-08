@@ -1,0 +1,100 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<%= f.fields_for :establishment do |ff| %>
+
+<div class="card">
+    <div class="card-header"><strong>Dados do Estabelecimento</strong></div>
+    <div class="card-body">
+
+        <div class="form-group row">
+            <div class="col-md-6">
+                <%= ff.input :name, placeholder: 'Nome do estabelecimento ', required: :true, class: "form-control" %>
+            </div>
+            <div class="col-md-6">
+                <%= ff.input :cnpj, placeholder: 'CNPJ do estabelecimento ', required: :true, class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-6">
+            <%= f.input :category, collection: ["Sem Estrela","1 - Estrela","2 - Estrelas","3 - Estrelas"], required: :true, class: "form-control" %>
+        </div>
+        <div class="col-md-6">
+            <%# ff.input :final_note, placeholder: 'Nota Final ', required: :true, class: "form-control" %>
+            <%= ff.input :final_note, readonly: true, class: "form-control" %>
+
+        </div>  
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-6">
+            <%= ff.input :contact, placeholder: 'Contato ', required: :true, class: "form-control" %>
+        </div>  
+        <div class="col-md-6">
+            <%= ff.input :email, placeholder: 'Email do estabelecimento  ', required: :true, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-3">
+            <%= ff.label :nationality, "Nacionalidade: ", class: "col-form-label"  %><br>
+            <%= ff.country_select :nationality, priority_countries = ["Brazil", "Uruguay", "Argentina", "Paraguay"], options = {}, html_options = {:class => "form-control"} %>
+        </div>  
+        
+        <div class="col-md-3">
+            <%= ff.input :cep, placeholder: 'Digite o CEP  ', required: :true, class: "form-control" %>
+
+
+        </div>
+        <div class="col-md-3">
+            <%= ff.input :number_address, placeholder: 'Número  ', required: :true, class: "form-control" %>
+
+        </div>  
+        <div class="col-md-3">
+            <%= ff.input :complement, placeholder: 'Complemento  ', required: :true, class: "form-control" %>
+        </div> 
+    </div>
+
+    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <%= ff.input :address, placeholder: 'Ponto de referencia do estabelecimento  ', required: :true, class: "form-control" %>
+        </div> 
+        <div class="col-md-3">
+            <%= ff.input :city, placeholder: 'Ponto de referencia do estabelecimento  ', required: :true, class: "form-control" %>
+        </div> 
+        <div class="col-md-3">
+            <%= ff.input :neighborhood, placeholder: 'Ponto de referencia do estabelecimento  ', required: :true, class: "form-control" %>
+        </div> 
+        <div class="col-md-3">
+            <%= ff.input :state, placeholder: 'Ponto de referencia do estabelecimento  ', required: :true, class: "form-control" %>
+        </div>  
+    </div>
+    <div class="col-md-6">
+      <%= ff.input :geolocalization, placeholder: 'geolocalização  ', required: :true, class: "form-control", readonly: true %>
+  </div>   
+  
+
+
+  <div class="form-group row">
+    <div class="col-md-6">
+        <%= ff.input :reference_point, placeholder: 'Ponto de referencia do estabelecimento  ', required: :true, class: "form-control" %>
+    </div>  
+</div>
+<div class="form-group row">
+    <div class="col-md-4">
+        <%= ff.input :owner, placeholder: 'Dono do estabelecimento  ', required: :true, class: "form-control" %>
+    </div>
+    <div class="col-md-4">
+        <%= ff.input :telephone, placeholder: 'Telefone do estabelecimento  ', required: :true, class: "form-control" %>
+    </div>  
+    <div class="col-md-4">
+        <%= ff.input :reservation_phone, placeholder: 'Telefone reserva do estabelecimento  ', required: :true, class: "form-control" %>
+    </div>
+    
+</div>
+
+</div>
+</div>
+
+<% end %>

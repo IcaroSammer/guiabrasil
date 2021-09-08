@@ -1,0 +1,60 @@
+
+<div class = "row form-group">
+
+  <div class="col-sm-2">
+    Dias da Semana
+
+  </div>
+  <div class="col-sm-2">
+  </div>
+
+  <div class="col-sm-2">
+    Primeira Abertura
+
+  </div>
+  <div class="col-sm-2">
+    Primeiro Fechamento
+  </div>
+  <div class="col-sm-2">
+    Segunda abertura
+  </div>
+
+  <div class="col-sm-2">
+    Segundo Fechamento
+  </div>
+
+
+
+
+</div>
+
+<div class = "row form-group">
+
+  <div class="col-sm-4">
+    <%= f.input :week_days, as: :check_boxes, label: " ", collection: ["Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo"],input_html: {multiple: true } %>
+
+  </div>
+
+  <div id = "horario" class="col-sm-8" > 
+    <div class = "row form-group">
+      <div class="col-sm-2">
+        <%= f.input :start_1, as: :array, type: 'time', label: false, required: :true, input_html: {class: "form-control"} %>
+      </div>
+      <div class="col-sm-2">
+        <%= f.input :end_1, as: :array, type: 'time' , label: false, required: :true, input_html: {class: "form-control"} %>
+      </div>
+      <div class="col-sm-2">
+        <%= f.input :start_2, as: :array, type: 'time' , label: false, required: :true, input_html: {class: "form-control"} %>
+      </div>
+      <div class="col-sm-2">
+        <%= f.input :end_2, as: :array, type: 'time' , label: false, required: :true, input_html: {class: "form-control"} %>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-8">
+    <%= f.input :comment_hour, as: :text, input_html: {class: "form-control"} %>
+  </div>
+
+</div>

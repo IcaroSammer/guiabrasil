@@ -1,0 +1,27 @@
+<tr>
+  <td><%= service.name %></td>
+  <td><%= service.description %></td>
+  
+  <td>
+    <% if service.active %>
+      <i class="icon-thumbs-up" style="color: green;"></i>
+    <% else %>
+      <i class="icon-thumbs-down" style="color: red;"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= show_resource_with_icon admin_service_path(service) %>
+    <%= edit_resource edit_admin_service_path(service) %>
+    <%#remove_resource(admin_service_path(service), {})%>
+    <% if service.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_service_path(service),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_service_path(service),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

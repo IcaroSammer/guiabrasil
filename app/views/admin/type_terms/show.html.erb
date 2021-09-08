@@ -1,0 +1,26 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Termo #{@type_term.name} " %> 
+      		<%= edit_resource edit_admin_type_term_path(@type_term) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= TypeTerm.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @type_term.active %><br>
+            <b><%= TypeTerm.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @type_term.name %><br>
+            <b><%= TypeTerm.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @type_term.name %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_type_terms_path) %>
+    
+  
+  </footer>

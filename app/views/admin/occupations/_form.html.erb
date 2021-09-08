@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, @occupation] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Nova Função</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Função ativa ?" %>
+      <%= f.input :name, placeholder: 'Nome da função ', required: :true %>  
+      <%= f.input :description, placeholder: 'Descrição da função ', required: :true %>  
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>
+

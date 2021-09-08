@@ -1,0 +1,18 @@
+<%= simple_form_for [:admin, @environment] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Nova Modalidade de Ambiente</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Ambiente ativa ?" %>
+      <%= f.input :name, placeholder: 'Digite o Novo Cadastro de Ambiente ', required: :true %>
+      <%= f.input :business_establishment, as: :check_boxes, collection: human_attribute_establishment_types, input_html: {multiple: true},  required: :true  %>    
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

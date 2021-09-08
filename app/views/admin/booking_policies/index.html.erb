@@ -1,0 +1,20 @@
+<%= title_page "Políticas de reservas" %>
+
+<%= add_resource "Política de Reserva", new_admin_booking_policy_path %>
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_booking_policies_path, resource: BookingPolicy } %>
+
+<table class="table-page">
+  <thead>
+    <tr>
+      <th><%= BookingPolicy.human_attribute_name(:name) %></th>
+      <th><%= BookingPolicy.human_attribute_name(:business_establishment) %></th>
+      <th><%= BookingPolicy.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@booking_policies, fields: 4) %>
+  </tbody>
+</table>
+
+<%= will_paginate @booking_policies %>

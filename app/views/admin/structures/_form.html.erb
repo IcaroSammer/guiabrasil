@@ -1,0 +1,17 @@
+<%= simple_form_for [:admin, @structure] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Nova Categoria de estrutura</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Categoria ativa ?" %>
+      <%= f.input :name, placeholder: 'Nome da categoria ', required: :true %>    
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

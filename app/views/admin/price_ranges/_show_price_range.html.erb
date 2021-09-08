@@ -1,0 +1,23 @@
+  <section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Faixa de preços</h2>
+    </header>
+      <article>
+        <b><%= PriceRange.human_attribute_name(:active) %>:&nbsp;</b>
+        <%= @price_range.active %> <br>
+        <b><%= PriceRange.human_attribute_name(:id) %>:&nbsp;</b>
+        <%= @price_range.id %> <br>
+        <b><%= PriceRange.human_attribute_name(:range_init) %>:&nbsp;</b>
+        <%= @price_range.range_init %> <br>
+        <b><%= PriceRange.human_attribute_name(:range_end) %>:&nbsp;</b>
+        <%= @price_range.range_end %><br>
+        <b><%= PriceRange.human_attribute_name(:description) %>:&nbsp;</b>
+        <%= @price_range.description %><br>
+        <b><%= PriceRange.human_attribute_name(:business_establishment) %>:&nbsp;</b>
+        <%= @price_range.business_establishment %><br>
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_price_ranges_path) %>
+  </footer>

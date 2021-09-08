@@ -1,0 +1,22 @@
+<%= title_page "Categorias de item social" %>
+
+<%= add_resource "Item Social", new_admin_social_item_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_social_items_path, resource: SocialItem } %>
+
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= SocialItem.human_attribute_name(:name) %></th>
+      <th><%= SocialItem.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@social_items, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @socialitem %>

@@ -1,0 +1,2 @@
+module Admin::TypeTermsHelper
+end

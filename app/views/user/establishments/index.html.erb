@@ -1,0 +1,17 @@
+
+<div class="panel-group">
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= render partial: 'layouts/filters/filters', locals: { path: filters_user_establishments_path, resource: Establishment } %>
+
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= link_to "Novo", new_user_establishment_path, class: "btn btn-primary" %>
+		</div>
+		<div class="panel-body"><%= display_list_for(@establishments, fields: 20) %></div>
+		<div class="panel-footer"><%= will_paginate @establishments %></div>
+	</div>
+</div>

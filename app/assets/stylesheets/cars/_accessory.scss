@@ -1,0 +1,37 @@
+.select-inline{
+	display:flex;
+
+}
+.form-check{
+	display:flex;
+}
+.form-check-label{
+	display: block;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5em;
+	cursor: pointer;
+	margin-bottom: 9px;
+	padding-left: 7px;
+	padding-top: 3px;	
+}
+.collection_check_boxes{
+	display: block;
+	font-size: 16px;
+	font-size: small;
+	line-height: 1.5em;
+	cursor: pointer;
+	margin-bottom: 9px;
+	padding-left: 7px;
+	padding-top: 7px;
+}
+.collection_radio_buttons{
+	display: block;
+	font-size: 16px;
+	font-size: small;
+	line-height: 1.5em;
+	cursor: pointer;
+	margin-bottom: 9px;
+	padding-left: 7px;
+	padding-top: 3px;
+}

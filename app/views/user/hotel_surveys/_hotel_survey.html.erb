@@ -1,0 +1,22 @@
+<div class="row">
+
+  <div class="col-sm">
+    <%= hotel_survey.survey_date %>
+  </div>
+  <div class="col-sm">
+    <%= hotel_survey.final_rate %>
+  </div>
+  <div class="col-sm">
+    <%= hotel_survey.final_comments %>
+  </div>
+
+  
+  <div class="col-sm">
+
+    <%= link_to raw('<i class="fas fa-eye"></i>'), user_hotel_survey_path(hotel_survey) %>
+    <%= link_to raw('<i class="fas fa-edit"></i>'), edit_user_hotel_survey_path(hotel_survey) %>
+    <%= link_to raw('<i class="fas fa-ban"></i>'), user_hotel_survey_path(hotel_survey),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

@@ -1,0 +1,210 @@
+<%= simple_form_for [:user, @hotel] do |f|%>
+<div class="card">
+  <div class="card-header"><strong>Itens de Estrutura</strong></div>
+  <div class="card-body">
+
+
+    <div class="multiselect">
+      <div class="selectBox" onclick="showCheckboxeseLodging()">
+        <select class="browser-default custom-select custom-select-lg mb-3">
+          <option>Items de acomodação</option>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="lodging">
+        <%= f.input :lodging,  as: :check_boxes ,collection: Lodging.all, input_html: {multiple: true }, class: "form-control" %>
+      </div>
+      </div>
+
+      <div class="multiselect">
+        <div class="selectBox" onclick="showCheckboxeseRule()">
+          <select class="browser-default custom-select custom-select-lg mb-3">
+            <option>Regras</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div id="rule">
+          <%= f.input :rule,  as: :check_boxes ,collection: Rule.all, input_html: {multiple: true }, class: "form-control" %>
+        </div>
+      </div>
+
+      </div>
+      
+    </div>
+  </div>
+  <% end %>
+  <br>
+
+
+  <script type="text/javascript">
+
+
+    var expanded = false;
+
+    function showCheckboxeseEnviroment() {
+      var checkboxes = document.getElementById("enviroment");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    function showCheckboxeseAccommodationType() {
+      var checkboxes = document.getElementById("atype_of_accomodation");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    function showCheckboxeseLodging() {
+      var checkboxes = document.getElementById("lodging");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    function showCheckboxeseRule() {
+      var checkboxes = document.getElementById("rule");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    function showCheckboxeseStructure() {
+      var checkboxes = document.getElementById("structure");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    function showCheckboxeseRecreationArea() {
+      var checkboxes = document.getElementById("recreation_area");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    function showCheckboxeseSocialItem() {
+      var checkboxes = document.getElementById("social_item");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    function showCheckboxeseService() {
+      var checkboxes = document.getElementById("service");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    function showCheckboxeseAccommodationItem() {
+      var checkboxes = document.getElementById("accommodation_item");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+
+    <% enviroment =  @hotel.enviroment.size %>
+    <% enviroment -= 1 %>
+    <% (1..enviroment).each do |i| %>
+    <% @enviroment = Environment.select(:id).where("id = ?",@hotel.enviroment[i]) %>
+    <% @enviroment.each do |answer| %>
+      document.getElementById("hotel_enviroment_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    <% type_of_accomodation =  @hotel.type_of_accomodation.size %>
+    <% type_of_accomodation -= 1 %>
+    <% (1..type_of_accomodation).each do |i| %>
+    <% @type_of_accomodation = Environment.select(:id).where("id = ?",@hotel.type_of_accomodation[i]) %>
+    <% @type_of_accomodation.each do |answer| %>
+    document.getElementById("hotel_type_of_accomodation_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    <% lodging =  @hotel.lodging.size %>
+    <% lodging -= 1 %>
+    <% (1..lodging).each do |i| %>
+    <% @lodging = Lodging.select(:id).where("id = ?",@hotel.lodging[i]) %>
+    <% @lodging.each do |answer| %>
+    document.getElementById("hotel_lodging_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    <% rule =  @hotel.rule.size %>
+    <% rule -= 1 %>
+    <% (1..rule).each do |i| %>
+    <% @rule = Rule.select(:id).where("id = ?",@hotel.rule[i]) %>
+    <% @rule.each do |answer| %>
+    document.getElementById("hotel_rule_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    <% structure =  @hotel.structure.size %>
+    <% structure -= 1 %>
+    <% (1..structure).each do |i| %>
+    <% @structure = Rule.select(:id).where("id = ?",@hotel.structure[i]) %>
+    <% @structure.each do |answer| %>
+    document.getElementById("hotel_structure_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    <% recreation_area =  @hotel.recreation_area.size %>
+    <% recreation_area -= 1 %>
+    <% (1..recreation_area).each do |i| %>
+    <% @recreation_area = RecreationArea.select(:id).where("id = ?",@hotel.recreation_area[i]) %>
+    <% @recreation_area.each do |answer| %>
+    document.getElementById("hotel_recreation_area_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    <% social_item =  @hotel.social_item.size %>
+    <% social_item -= 1 %>
+    <% (1..social_item).each do |i| %>
+    <% @social_item = SocialItem.select(:id).where("id = ?",@hotel.social_item[i]) %>
+    <% @social_item.each do |answer| %>
+    document.getElementById("hotel_social_item_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    <% service =  @hotel.service.size %>
+    <% service -= 1 %>
+    <% (1..service).each do |i| %>
+    <% @service = Service.select(:id).where("id = ?",@hotel.service[i]) %>
+    <% @service.each do |answer| %>
+    document.getElementById("hotel_service_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    <% accommodation_item =  @hotel.accommodation_item.size %>
+    <% accommodation_item -= 1 %>
+    <% (1..accommodation_item).each do |i| %>
+    <% @accommodation_item = AccommodationItem.select(:id).where("id = ?",@hotel.accommodation_item[i]) %>
+    <% @accommodation_item.each do |answer| %>
+    document.getElementById("hotel_accommodation_item_" + <%= answer.id %>).checked = true; 
+    <% end %>
+    <% end %>
+    
+
+
+  </script> 

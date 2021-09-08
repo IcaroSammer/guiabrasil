@@ -1,0 +1,158 @@
+#admin_login {
+  &.login {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    float: left;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+
+    &.admin {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .container {
+      text-align-last: center;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+      height: 100%;
+      top: 30%;
+      left: 05%;
+    }
+
+    .mask {
+      background: rgba($light-green, 0.79);
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .wrapper-form {
+      position: fixed;
+      width: 40%;
+      height: 500px;
+      padding: 40px;
+      border-radius: 3px;
+
+      .logo {
+        img {
+          width: 50%;
+        }
+      }
+    }
+
+    form {
+      background: $turquoise;
+      padding: 50px;
+      margin-top: 30px;
+
+      label {
+        color: white;
+        text-align-last: left;
+      }
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 10px;
+      clear: left;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'] {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      margin-bottom: 30px;
+      padding: 0 20px;
+      font-size: 18px;
+      text-align-last: left;
+    }
+
+    input[type='checkbox'] {
+      margin-right: 10px;
+    }
+
+    input[type='submit'] {
+      margin: 25px auto;
+      text-align: center;
+      font-size: 22px;
+      color: white;
+      text-transform: uppercase;
+      line-height: 50px;
+      height: 50px;
+      width: 150px;
+      padding: 0;
+      float: none;
+      display: block;
+      outline: none;
+      border-radius: 5px;
+      border: none;
+      align-items: center;
+    }
+
+    .messages {
+      width: 100%;
+      clear: left;
+      padding: 5px 5px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 12px;
+
+      &.alert {
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+      }
+    }
+
+    .img-background {
+      img {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
+    }
+  }
+}
+
+/* VEX ALERTS */
+.vex-theme-flat-attack {
+  z-index: 9999;
+
+  .vex-dialog-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    padding: 20px;
+  }
+
+  .vex-dialog-message {
+    font-size: 16px;
+    color: #FFF;
+  }
+
+  .vex-dialog-buttons {
+    display: none;
+  }
+}

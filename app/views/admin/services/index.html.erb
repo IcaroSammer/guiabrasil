@@ -1,0 +1,24 @@
+<%= title_page "Cadastro de serviço" %>
+
+<%= add_resource "Serviço", new_admin_service_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_services_path, resource: Service } %>
+
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= Service.human_attribute_name(:name) %></th>
+      <th><%= Service.human_attribute_name(:description) %></th>
+      <th><%= Service.human_attribute_name(:active) %></th>
+
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@services, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @services %>

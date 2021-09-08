@@ -1,0 +1,13 @@
+<tr>
+	<td><%= tourist_attraction.establishment.name %></td>
+	<td><%= tourist_attraction.classification_order %></td>
+	<td><%= tourist_attraction.interest_score %></td>
+	<td><%= tourist_attraction.active %></td>
+	
+	<td><%= link_to "Publicação", new_user_publication_path(id: tourist_attraction.establishment.id) %></td>
+	<td><%= link_to 'Mostrar', user_tourist_attraction_path(tourist_attraction) %></td>
+	<td><%= link_to 'Editar', edit_user_tourist_attraction_path(tourist_attraction) %></td>
+	<td><%= link_to 'Inativar', user_tourist_attraction_path(tourist_attraction),
+	method: :delete,
+	data: { confirm: 'Are you sure?' } %></td>
+</tr>

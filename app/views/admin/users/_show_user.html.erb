@@ -1,0 +1,27 @@
+  <section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Reporter</h2>
+    </header>
+       <article>
+        <% if @user.photo.attached? %>
+            <%= image_tag(@user.photo, class: "mr-3") %>
+        <% else %>
+            <%= image_tag 'people-default.png', resize: "100x150>", class: "mr-3" %>
+        <% end %>
+      </article>    
+    <article>
+      <b><%= User.human_attribute_name(:name) %>:&nbsp;</b>
+      <%= @user.name %><br />      
+      <b><%= User.human_attribute_name(:email) %>:&nbsp;</b>
+      <%= @user.email %><br />            
+      <b><%= User.human_attribute_name(:phone_number) %>:&nbsp;</b>
+      <%= @user.phone_number %><br />            
+    </article>
+    <article>
+    </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_users_path) %>
+  </footer>
+

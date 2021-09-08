@@ -1,0 +1,19 @@
+<%= title_page "Clientes" %>
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_customers_path, resource: Customer } %>
+
+
+<table class="table-page">
+  <thead>
+    <tr>
+      <th><%= Profile.human_attribute_name(:name) %></th>
+      <th><%= Customer.human_attribute_name(:email) %></th>
+      <th><%= Profile.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@customers, fields: 4) %>
+  </tbody>
+</table>
+
+<%= will_paginate @customers %>

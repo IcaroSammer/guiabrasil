@@ -1,0 +1,31 @@
+
+<%= f.fields_for :hotel_survey do |ff| %>
+
+<div class="card">
+	<div class="card-header"><strong>Estrutura</strong></div>
+	<div class="card-body">
+
+	
+
+		<%= render partial: 'user/hotels/show/survey/structure' , locals: {f: ff}  %>
+
+		<div class="form-group row">
+			<div class="col-md-4">
+				<%= f.input :has_convention_rooms, as: :radio_buttons, class: "form-control", readonly: true %>
+			</div>
+			<div class="col-md-4">
+				<%= f.input :number_of_convetion_rooms, class: "form-control", readonly: true %>
+			</div>  
+			<div class="col-md-4">
+				<%= f.input :total_capacity_convention_romms, class: "form-control", readonly: true %>
+			</div>              
+		</div>
+
+		<%  Structure.where(id: f.object.structure).each  do |it|  %>
+   <i class="far fa-thumbs-up" style="color:green;"></i> <%= it.name %><br>
+   <% end %>
+
+	</div>
+</div>
+<hr>
+<% end %>

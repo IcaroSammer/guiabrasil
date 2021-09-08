@@ -1,0 +1,81 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Empresa #{@enterprise.name} " %> 
+      		<%= edit_resource edit_admin_enterprise_path(@enterprise) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+        <b><%= Enterprise.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @enterprise %><br>
+         <b><%= Enterprise.human_attribute_name(:nick_name) %>:&nbsp;</b>
+            <%= @enterprise.nick_name %><br>
+         <b><%= Enterprise.human_attribute_name(:cnpj) %>:&nbsp;</b>
+            <%= @enterprise.cnpj %><br>
+         <b><%= Enterprise.human_attribute_name(:foundation_date) %>:&nbsp;</b>
+            <%= @enterprise.foundation_date %><br>
+         <b><%= Enterprise.human_attribute_name(:economic_activity_code) %>:&nbsp;</b>
+            <%= @enterprise.economic_activity_code %><br>
+         <b><%= Enterprise.human_attribute_name(:economic_activity_description) %>:&nbsp;</b>
+            <%= @enterprise.economic_activity_description %><br>
+         <b><%= Enterprise.human_attribute_name(:company_size) %>:&nbsp;</b>
+            <%= @enterprise.company_size %><br>
+         <b><%= Enterprise.human_attribute_name(:secondary_economic_activities_code) %>:&nbsp;</b>
+            <%= @enterprise.secondary_economic_activities_code %><br>
+         <b><%= Enterprise.human_attribute_name(:secondary_economic_activities_description) %>:&nbsp;</b>
+            <%= @enterprise.secondary_economic_activities_description %><br>
+         <b><%= Enterprise.human_attribute_name(:legal_nature_code) %>:&nbsp;</b>
+            <%= @enterprise.legal_nature_code %><br>
+         <b><%= Enterprise.human_attribute_name(:legal_nature_description) %>:&nbsp;</b>
+            <%= @enterprise.legal_nature_description %><br>
+         <b><%= Enterprise.human_attribute_name(:address) %>:&nbsp;</b>
+            <%= @enterprise.address %><br>
+         <b><%= Enterprise.human_attribute_name(:address_complement) %>:&nbsp;</b>
+            <%= @enterprise.address_complement %><br>
+         <b><%= Enterprise.human_attribute_name(:address_number) %>:&nbsp;</b>
+            <%= @enterprise.address_number %><br>
+         <b><%= Enterprise.human_attribute_name(:neighbohood) %>:&nbsp;</b>
+            <%= @enterprise.neighbohood %><br>
+         <b><%= Enterprise.human_attribute_name(:zip_code) %>:&nbsp;</b>
+            <%= @enterprise.zip_code %><br>
+         <b><%= Enterprise.human_attribute_name(:city) %>:&nbsp;</b>
+            <%= @enterprise.city %><br>
+         <b><%= Enterprise.human_attribute_name(:state) %>:&nbsp;</b>
+            <%= @enterprise.state %><br>
+         <b><%= Enterprise.human_attribute_name(:country_code) %>:&nbsp;</b>
+            <%= @enterprise.country_code %><br>
+         <b><%= Enterprise.human_attribute_name(:country) %>:&nbsp;</b>
+            <%= @enterprise %><br>
+         <b><%= Enterprise.human_attribute_name(:phone_number) %>:&nbsp;</b>
+            <%= @enterprise.country %><br>
+         <b><%= Enterprise.human_attribute_name(:mobile_phone_number) %>:&nbsp;</b>
+            <%= @enterprise.mobile_phone_number %><br>
+         <b><%= Enterprise.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @enterprise.active %><br>
+         <b><%= Enterprise.human_attribute_name(:email) %>:&nbsp;</b>
+            <%= @enterprise.email %><br>
+         <b><%= Enterprise.human_attribute_name(:enterprise_type) %>:&nbsp;</b>
+            <%= @enterprise.enterprise_type %><br>
+         <b><%= Enterprise.human_attribute_name(:group_company) %>:&nbsp;</b>
+            <%= @enterprise.group_company %><br>
+         <b><%= Enterprise.human_attribute_name(:business_partner) %>:&nbsp;</b>
+            <%= @enterprise.business_partner %><br>
+        
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_enterprises_path) %>
+    
+  
+  </footer>
+
+
+
+    
+      
+   
+      

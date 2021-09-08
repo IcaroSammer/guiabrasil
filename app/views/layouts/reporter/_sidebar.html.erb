@@ -1,0 +1,28 @@
+    <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+      <div class="c-sidebar-brand d-lg-down-none">
+      	<%= image_pack_tag 'logotipo.png', class: "c-sidebar-brand-full maxlogo" %>
+      	<%= image_pack_tag 'logotipo.png', class: "c-sidebar-brand-minimized minilogo" %>
+
+      </div>
+      <ul class="c-sidebar-nav">
+
+        <li class="c-sidebar-nav-item">
+          <%= link_to raw('<i class="fas fa-hotel c-sidebar-nav-icon"></i> Hoteis'), user_hotels_path,  class: "c-sidebar-nav-link" %>
+        </li>
+
+        <li class="c-sidebar-nav-item">
+          <%= link_to raw('<i class="fas fa-utensils c-sidebar-nav-icon"></i> Restaurante'), user_restaurants_path, class: "c-sidebar-nav-link" %>
+        </li>  
+
+        <li class="c-sidebar-nav-item">
+          <%= link_to raw('<i class="fas fa-camera-retro c-sidebar-nav-icon"></i> Atrações Turisticas'), user_tourist_attractions_path, class: "c-sidebar-nav-link" %>
+        </li>        
+
+        <li class="c-sidebar-nav-item">
+          <%= link_to raw('<i class="fas fa-city c-sidebar-nav-icon"></i> Cidades'), user_cities_path, class: "c-sidebar-nav-link" %>
+        </li>        
+
+
+      </ul>
+      <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
+    </div>

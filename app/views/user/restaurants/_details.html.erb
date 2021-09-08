@@ -1,0 +1,124 @@
+<%= simple_form_for [:user, @restaurant]  do |f|%>
+<div class="card">
+  <div class="card-header"><strong>Intens disponíveis</strong></div>
+  <div class="card-body">
+    
+    <div class="multiselect">
+      <div class="selectBox" onclick="showCheckboxesespecialities()">
+        <select class="browser-default custom-select custom-select-lg mb-2">
+          <option>Especialidades</option>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="especialities form-group">
+        <%= f.input :speciality,  collection: Speciality.where(active: true).collect { |spec| [spec.name, spec.id] }, 
+        selected: Speciality.where(id: f.object.speciality).pluck(:id),
+        class: "form-control" %>
+      </div>
+    </div>
+    <div class="multiselect">
+      <div class="selectBox" onclick="showCheckboxeseenviroment()">
+        <select class="browser-default custom-select custom-select-lg mb-2">
+          <option>Conforto</option>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="enviroment">
+        <%= f.input :classification_comfort,  as: :check_boxes ,collection: Commfort.where(active: true), input_html: {multiple: true }, class: "form-control" %>
+      </div>
+    </div>
+    <div class="multiselect">
+      <div class="selectBox" onclick="showCheckboxeseclassification_comfort()">
+        <select class="browser-default custom-select custom-select-lg mb-2">
+          <option>Ambiente</option>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <%= f.input :environment, as: :check_boxes ,collection: Environment.where(active: true), checked: Environment.where(id: f.object.environment).pluck(:id), input_html: {multiple: true }, class: "form-control" %>
+    </div>
+    <div class="multiselect">
+      <div class="selectBox" onclick="showCheckboxeseIcon()">
+        <select class="browser-default custom-select custom-select-lg mb-2">
+          <option>Icone</option>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="icone">
+        <%= f.input :icon, as: :check_boxes ,collection: Icon.where("business_establishment @> ?", '{RESTAURANTES}').where(active: true), checked: Icon.where(id: f.object.icon).pluck(:id), input_html: {multiple: true }, class: "form-control" %>
+      </div>
+    </div>
+    
+    
+
+  </article>
+</section>
+<% end %>
+
+
+<script type="text/javascript">
+  
+  var expanded = false;
+
+  function showCheckboxesespecialities() {
+    var checkboxes = document.getElementById("especialities");
+    if (!expanded) {
+      checkboxes.style.display = "block";
+      expanded = true;
+    } else {
+      checkboxes.style.display = "none";
+      expanded = false;
+    }
+  }
+
+  function showCheckboxeseenviroment() {
+    var checkboxes = document.getElementById("enviroment");
+    if (!expanded) {
+      checkboxes.style.display = "block";
+      expanded = true;
+    } else {
+      checkboxes.style.display = "none";
+      expanded = false;
+    }
+  }
+  function showCheckboxeseclassification_comfort() {
+    var checkboxes = document.getElementById("classification_comfort");
+    if (!expanded) {
+      checkboxes.style.display = "block";
+      expanded = true;
+    } else {
+      checkboxes.style.display = "none";
+      expanded = false;
+    }
+  }
+  function showCheckboxeseIcon() {
+    var checkboxes = document.getElementById("icone");
+    if (!expanded) {
+      checkboxes.style.display = "block";
+      expanded = true;
+    } else {
+      checkboxes.style.display = "none";
+      expanded = false;
+    }
+  }
+  <% classification_comfort =  @restaurant.classification_comfort.size %>
+  <% classification_comfort -= 1 %>
+  <% (1..classification_comfort).each do |i| %>
+  <% @teste = Commfort.select(:id).where("id = ?",@restaurant.classification_comfort[i]) %>
+  <% @teste.each do |answer| %>
+  document.getElementById("restaurant_classification_comfort_" + <%= answer.id %>).checked = true; 
+  <% end %>
+  <% end %>
+  <% environment =  @restaurant.environment.size %>
+  <% environment -= 1 %>
+  <% (1..environment).each do |i| %>
+  <% @teste = Environment.select(:id).where("id = ?",@restaurant.environment[i]) %>
+  <% @teste.each do |answer| %>
+  document.getElementById("restaurant_environment_" + <%= answer.id %>).checked = true; 
+  <% end %>
+  <% end %>
+
+
+</script> 
+
+</div>
+</div>

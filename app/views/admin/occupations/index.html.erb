@@ -1,0 +1,23 @@
+<%= title_page "Funções" %>
+
+<%= add_resource "Função", new_admin_occupation_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_occupations_path, resource: Occupation } %>
+
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= Occupation.human_attribute_name(:name) %></th>
+      <th><%= Occupation.human_attribute_name(:description) %></th>
+      <th><%= Occupation.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@occupations, fields: 4) %>
+  </tbody>
+</table>
+
+<%= will_paginate @occupations %>

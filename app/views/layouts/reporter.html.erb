@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    
+    <title>Guia Brasil Digital - REPORTER</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+
+
+<body class="c-app">
+  
+      <%= render partial: 'layouts/reporter/sidebar' %>
+    <!-- Sidebar content here -->
+  
+  <div class="c-wrapper">
+    
+      <%= render partial: 'layouts/reporter/header' %>
+      <!-- Header content here -->
+    
+    <div class="c-body">
+      <main class="c-main">
+        <!-- Main content here -->
+          <%= yield %>
+      </main>
+    </div>
+    
+      <!-- Footer content here -->
+      <%= render partial: 'layouts/reporter/footer' %>
+    
+  </div>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
+     
+</body>
+
+</html>

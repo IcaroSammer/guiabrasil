@@ -1,0 +1,26 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Tipos de pagamento #{@lodging.name} " %> 
+      		<%= edit_resource edit_admin_lodging_path(@lodging) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Lodging.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @lodging.active %><br>
+            <b><%= Lodging.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @lodging.name %><br>
+            <b><%= Lodging.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @lodging.description %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_lodging_path) %>
+    
+  
+  </footer>

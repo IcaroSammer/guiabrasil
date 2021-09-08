@@ -1,0 +1,23 @@
+<%= title_page "Cômodos" %>
+
+<%= add_resource "Cômodo", new_admin_room_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_rooms_path, resource: Room } %>
+
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= Room.human_attribute_name(:name) %></th>
+      <th><%= Room.human_attribute_name(:description) %></th>
+      <th><%= Room.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@rooms, fields: 4) %>
+  </tbody>
+</table>
+
+<%= will_paginate @rooms %>

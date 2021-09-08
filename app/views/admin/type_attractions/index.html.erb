@@ -1,0 +1,21 @@
+
+<%= title_page "Tipos de Atrações" %>
+
+<%= add_resource "Tipo de Atração", new_admin_type_attraction_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_type_attractions_path, resource: TypeAttraction } %>
+
+<table class="table-page">
+  <thead>
+    <tr>
+      <th><%= TypeAttraction.human_attribute_name(:name) %></th>
+      <th><%= TypeAttraction.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@type_attractions, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @type_attractions %>

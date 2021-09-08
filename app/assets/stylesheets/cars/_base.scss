@@ -1,0 +1,14 @@
+@import "accessory";
+@import "basic_car_info";
+@import "efficiency";
+@import "security";
+
+.fields-wrapper {
+	header {
+		background: $turquoise;
+
+		h2 {
+			background: $turquoise;			
+		}
+	}
+}  

@@ -1,0 +1,30 @@
+<% if @restaurants.count> 0 %>
+<tr>
+  <td>
+    <%= restaurant.establishment.name%>
+  </td>
+  <td>
+    <%= restaurant.category %>
+  </td>
+
+  <td>
+    <%# restaurant.final_note %>
+  </td>
+
+  <td>
+    <%= link_to "Publicação", new_user_publication_path(id: restaurant.establishment.id) %>
+    <%= link_to raw('<i class="fas fa-eye"></i>'), user_restaurant_path(restaurant) %>
+    <%= link_to raw('<i class="fas fa-edit"></i>'), edit_user_restaurant_path(restaurant) %>
+    <%= link_to raw('<i class="fas fa-ban"></i>'), user_restaurant_path(restaurant),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
+<% else %>
+  <tr>
+    <td colspan="4">
+      Nenhum Registro Encontrado
+    </td>
+  </tr>
+  
+<% end %>

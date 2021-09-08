@@ -1,0 +1,21 @@
+<%= title_page "Icones" %>
+
+<%= add_resource "Icone", new_admin_icon_path %>
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_icons_path, resource: Icon } %>
+
+
+<table class="table-page">
+  <thead>
+    <tr>
+      <th><%= Icon.human_attribute_name(:name) %></th>
+      <th><%= Icon.human_attribute_name(:business_establishment) %></th>
+      <th><%= Icon.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@icons, fields: 4) %>
+  </tbody>
+</table>
+
+<%= will_paginate @icons %>

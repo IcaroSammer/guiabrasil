@@ -1,0 +1,7 @@
+<div class="row nav-item">
+	<% @cities.each do |city| %>
+	
+		<%= link_to "#{city.city} - #{city.state}", cities_path(id: city.id), class: "badge badge-pill badge-primary" %>
+	
+	<% end %>
+</div>

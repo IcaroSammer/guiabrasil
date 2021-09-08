@@ -1,0 +1,42 @@
+<article class="filter-fields">
+  
+  <% case filter[:type] %>
+    <% when :common %>
+      <div class="input string">
+        <%= label_tag resource.human_attribute_name(filter[:attr]) %>:&nbsp;
+        <%= text_field_tag "query[#{filter[:attr].to_s}]", params[:query].present? ? params[:query][filter[:attr]] : '', class: filter[:attr].to_s %>&nbsp;
+      </div>
+
+    <% when :nested %>
+      <div class="input string">
+        <%= label_tag resource.human_attribute_name(filter[:attr]) %>:&nbsp;
+        <%= text_field_tag "query[#{filter[:attr].to_s}]", params[:query].present? ? params[:query][filter[:attr]] : '', class: filter[:attr].to_s %> &nbsp;
+      </div>
+
+    <% when :select %>
+      <div class="input string">
+        <%= label_tag resource.human_attribute_name(filter[:attr]) %>:&nbsp;
+        <%= select_tag "query[#{filter[:attr].to_s}]", options_for_select(filter[:options], (params[:query].present? ? params[:query][filter[:attr]] : '')), include_blank: resource.human_attribute_name(filter[:attr]) %>&nbsp;
+      </div>
+
+
+    <% when :date %>
+      <div class="input string">
+        <%= label_tag ("#{resource.human_attribute_name(filter[:attr])} de") %>:&nbsp;
+        <%= text_field_tag "query[#{filter[:attr].to_s}][from]", params[:query].nil? || params[:query][filter[:attr]].nil? || params[:query][filter[:attr]][:from].blank? ? '' : l(params[:query][filter[:attr]][:from].to_date), :class => 'datepicker', autocomplete: "off" %>&nbsp;
+      </div>
+
+      <div class="input string">
+        <%= label_tag ("#{resource.human_attribute_name(filter[:attr])} até") %>:&nbsp;
+        <%= text_field_tag "query[#{filter[:attr].to_s}][to]", params[:query].nil? || params[:query][filter[:attr]].nil? || params[:query][filter[:attr]][:to].blank? ? '' : l(params[:query][filter[:attr]][:to].to_date), :class => 'datepicker', autocomplete: "off" %>&nbsp;
+      </div>
+
+
+    <% when :float %>
+      <div class="input string">
+        <%= label_tag resource.human_attribute_name(filter[:attr]) %>:&nbsp;
+        <%= text_field_tag "query[#{filter[:attr].to_s}]", params[:query].present? ? params[:query][filter[:attr]] : '', class: filter[:attr].to_s %>&nbsp;
+      </div>
+  <% end %>
+
+</article>

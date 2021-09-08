@@ -1,0 +1,12 @@
+<tr>
+  <td><%= chef.name %></td>
+  <td><%= chef.description %></td>
+  <td><%= chef.service_time %></td>
+  <td><%= chef.active %></td>
+  
+  <td><%= link_to 'Mostrar', user_chef_path(chef) %></td>
+  <td><%= link_to 'Editar', edit_user_chef_path(chef) %></td>
+  <td><%= link_to 'Inativar', user_chef_path(chef),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+</tr>

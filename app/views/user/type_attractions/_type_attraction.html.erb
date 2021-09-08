@@ -1,0 +1,10 @@
+<tr>
+  <td><%= type_attraction.name %></td>
+  <td><%= type_attraction.active %></td>
+  
+  <td><%= link_to 'Mostrar', user_type_attraction_path(type_attraction) %></td>
+  <td><%= link_to 'Editar', edit_user_type_attraction_path(type_attraction) %></td>
+  <td><%= link_to 'Inativar', user_type_attraction_path(type_attraction),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+</tr>

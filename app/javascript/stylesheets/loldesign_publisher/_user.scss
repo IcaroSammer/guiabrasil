@@ -1,0 +1,26 @@
+.container {
+  .content-wrapper {
+    div.show-user {
+      margin-top: 20px;
+
+      .output {
+        margin-bottom: 16px;
+      }
+
+      label {
+        font-size: 14px;
+        display: none;
+        color:black;
+        font-weight: bold;
+      }
+
+      footer {
+        overflow: hidden;
+        width: 100%;
+        text-align: left;
+        border-top: 1px solid #808284;
+        padding-top: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<%= title_page "Mobiliario" %>
+
+<%= add_resource "Novo Mobiliario", new_admin_furniture_path %>
+
+
+<table class="table-page">
+  <thead>
+    <tr>
+      <th><%= Furniture.human_attribute_name(:name)%></th>
+      <th><%= Furniture.human_attribute_name(:description)%></th>
+      <th><%= Furniture.human_attribute_name(:dimension)%></th>
+      <th><%= Furniture.human_attribute_name(:rooms)%></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@furnitures, fields: 4) %>
+  </tbody>
+</table>
+
+<%= will_paginate @furnitures %>

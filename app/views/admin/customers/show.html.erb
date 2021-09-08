@@ -1,0 +1,74 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Cliente #{@customer.profile.name} " %> 
+      		<%= edit_resource edit_customer_profile_path(@customer) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Profile.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @customer.profile.name %><br>
+            <b><%= Customer.human_attribute_name(:email) %>:&nbsp;</b>
+            <%= @customer.email %><br>
+            <b><%= Customer.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @customer.profile.active %><br>
+            <b><%= Profile.human_attribute_name(:mobile_phone_number) %>:&nbsp;</b>
+            <%= @customer.profile.mobile_phone_number %><br>
+             <b><%= Profile.human_attribute_name(:contact_by_whats_app) %>:&nbsp;</b>
+            <%= @customer.profile.contact_by_whats_app %><br>
+             <b><%= Profile.human_attribute_name(:instagram) %>:&nbsp;</b>
+            <%= @customer.profile.instagram %><br>
+             <b><%= Profile.human_attribute_name(:facebook) %>:&nbsp;</b>
+            <%= @customer.profile.facebook %><br>
+             <b><%= Profile.human_attribute_name(:twitter) %>:&nbsp;</b>
+            <%= @customer.profile.twitter %><br>
+             <b><%= Profile.human_attribute_name(:linkedin) %>:&nbsp;</b>
+            <%= @customer.profile.linkedin %><br>
+            <b><%= Profile.human_attribute_name(:user_type) %>:&nbsp;</b>
+            <%= @customer.profile.user_type %><br>
+             <b><%= Profile.human_attribute_name(:cpf) %>:&nbsp;</b>
+            <%= @customer.profile.cpf %><br>
+             <b><%= Profile.human_attribute_name(:rg_rne) %>:&nbsp;</b>
+            <%= @customer.profile.rg_rne %><br>
+            <b><%= Profile.human_attribute_name(:nacionality) %>:&nbsp;</b>
+            <%= @customer.profile.nacionality %><br>
+             <b><%= Profile.human_attribute_name(:zip_code) %>:&nbsp;</b>
+            <%= @customer.profile.zip_code %><br>
+             <b><%= Profile.human_attribute_name(:address) %>:&nbsp;</b>
+            <%= @customer.profile.address %><br>
+             <b><%= Profile.human_attribute_name(:neighbohood) %>:&nbsp;</b>
+            <%= @customer.profile.neighbohood %><br>
+             <b><%= Profile.human_attribute_name(:address_complement) %>:&nbsp;</b>
+            <%= @customer.profile.address_complement %><br>
+             <b><%= Profile.human_attribute_name(:address_number) %>:&nbsp;</b>
+            <%= @customer.profile.address_number %><br>
+            <b><%= Profile.human_attribute_name(:city) %>:&nbsp;</b>
+            <%= @customer.profile.city %><br>
+             <b><%= Profile.human_attribute_name(:state) %>:&nbsp;</b>
+            <%= @customer.profile.state %><br>
+             <b><%= Profile.human_attribute_name(:country) %>:&nbsp;</b>
+            <%= @customer.profile.country %><br>
+            <b><%= Profile.human_attribute_name(:birthday) %>:&nbsp;</b>
+            <%= @customer.profile.birthday %><br>
+             <b><%= Profile.human_attribute_name(:gender) %>:&nbsp;</b>
+            <%= @customer.profile.gender %><br>
+             <b><%= Profile.human_attribute_name(:customer_id) %>:&nbsp;</b>
+            <%= @customer.profile.customer_id %><br>
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_customers_path) %>
+    
+  
+  </footer>
+
+
+
+    
+      
+   
+      

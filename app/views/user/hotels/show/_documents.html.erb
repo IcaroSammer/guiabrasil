@@ -1,0 +1,27 @@
+<div class="card">
+	<div class="card-header"><strong>Documentos</strong></div>
+	<div class="card-body">
+
+		<% if f.object.documents.attached? %>
+		<div class="row">
+			<% f.object.documents.each do |document| %>
+			<div class="col-md-2">
+				<div class="card">
+					<div class="card-header"></div>
+					<div class="card-body">
+
+						<%= link_to raw('<i class="fas fa-paperclip" style="color:red; font-size: 40px;"></i>'),  url_for(document), target: 'blank'  %>
+						
+						
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	<% end %>
+</div>
+<% end %>
+<hr>

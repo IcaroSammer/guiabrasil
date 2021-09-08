@@ -1,0 +1,11 @@
+    <div class="multiselect" >
+      <div class="selectBox" class="col-md-6 select-outline" onclick="showCheckboxeseEnviroment()" style="width: 100%">
+        <select class="browser-default custom-select custom-select-lg mb-2">
+          <option><strong>Ambiente</strong></option>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="enviroment">
+        <%= f.input :enviroment,  as: :check_boxes ,collection: Environment.all, input_html: {multiple: true }, class: "form-control" %>
+      </div>
+     </div>

@@ -1,0 +1,2 @@
+module Admin::EstablishmentTermsHelper
+end

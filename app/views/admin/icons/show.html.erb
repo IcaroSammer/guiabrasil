@@ -1,0 +1,23 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Icone #{@icon.name} " %> 
+      		<%= edit_resource edit_admin_icon_path(@icon) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Icon.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @icon.name %><br>
+            <b><%= Icon.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @icon.description %><br>
+
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_furnitures_path) %>
+  </footer>

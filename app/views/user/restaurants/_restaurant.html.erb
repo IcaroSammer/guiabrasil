@@ -1,0 +1,23 @@
+<% if @restaurants.count> 0 %>
+<tr>
+  <td><%= restaurant.establishment.name%></td>
+  <td><%= restaurant.establishment.nationality %></td>
+  <td><%= restaurant.category %></td>
+  <td> <%= restaurant.establishment.final_note %></td>
+  <td> <%= restaurant.classification_order %></td>
+  <td>
+    <%= link_to raw('<i class="far fa-newspaper" style="color:gray"></i>'), new_user_publication_path(id: restaurant.establishment.id) %>
+    <%= link_to raw('<i class="fas fa-eye" style="color:green"></i>'), user_restaurant_path(restaurant) %>
+    <%= link_to raw('<i class="fas fa-edit" style="color:blue"></i>'), edit_user_restaurant_path(restaurant) %>
+    <%= link_to raw('<i class="fas fa-times" style="color:red"></i>'), user_restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?'} %>
+  </td>
+
+</tr>
+<% else %>
+  <tr>
+    <td colspan="4">
+      Nenhum Registro Encontrado
+    </td>
+  </tr>
+  
+<% end %>

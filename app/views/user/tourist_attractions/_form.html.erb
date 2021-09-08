@@ -1,0 +1,30 @@
+<%= simple_form_for [:user, @tourist_attraction]  do |f|%>
+<%= f.error_notification %>
+<div class="container-md">
+  <div class="card">
+    <div class="card-header"><strong>Nova Atração Turística</strong>
+      <div class="float-right">
+        Preencha os dados da Atração Turística
+      </div>
+
+    </div>
+    <div class="card-body">
+
+      <%= render partial: 'establishment', locals: {f: f}  %>
+      <%= render partial: 'tourist_attraction_data', locals: {f: f}  %>
+      <%= render partial: 'socialNetwork', locals: {f: f}  %>
+      <%= render partial: 'attachments', locals: {f: f}  %>
+
+    </div>
+    <div class="card-footer">
+      <%= button_tag(type: "submit", class: "btn btn-sm btn-success", disable_with: "gravando...") do %>
+      <i class="fas fa-cloud-upload-alt"></i> Salvar
+      <% end %>
+      <%= link_to raw('<i class="far fa-window-close"></i> Cancelar'), user_tourist_attractions_path, class: "btn btn-sm btn-danger" %>  
+    </div>
+
+
+  </div>
+</div>
+<%= javascript_pack_tag 'tourist_attractions/tourist_attractions', 'data-turbolinks-track': 'reload' %>
+<% end %>

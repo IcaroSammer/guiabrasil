@@ -1,0 +1,32 @@
+<%= f.fields_for :hotel_survey do |ff| %>
+
+<div class="multiselect">
+        <div class="selectBox" onclick="showCheckboxeseSocialItem()">
+          <select class="browser-default custom-select custom-select-lg mb-3">
+            <option>Social</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div id="social_item">
+
+        	<%= render partial: 'user/hotel_surveys/social' , locals: {f: ff}  %>
+
+          <%= f.input :social_item,  as: :check_boxes ,collection: SocialItem.all, input_html: {multiple: true }, class: "form-control" %>
+     		<div class="form-group row">
+     			<div class="col-md-6">
+     				<%= f.input :number_of_bars, class: "form-control"  %>
+     			</div>  
+     		   		
+     			<div class="col-md-6">
+     				<%= f.input :number_of_restaurants, class: "form-control"  %>
+     			</div>  
+   			
+     		</div>
+
+
+        </div>
+</div>
+<hr>
+<% end %>
+
+

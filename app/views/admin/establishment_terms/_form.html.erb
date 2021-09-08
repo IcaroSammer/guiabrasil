@@ -1,0 +1,24 @@
+<%= simple_form_for [:admin, @establishment_term] do |f| %>
+<%= f.error_notification %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Termos</h2>
+    </header>
+     <article>
+      <%= f.input :name, placeholder: 'Tipo de termo', required: :true %>
+      <%= f.input :active, placeholder: 'Ativo ? ', required: :true %>  
+      <%= f.input :description, placeholder: 'Descrição ', required: :true %>
+      <%= f.input :type_term, placeholder: 'Termo', required: :true %>
+      <%= f.input :publication_date, placeholder: 'Ativo ? ', required: :true %>  
+      <%= f.input :inactivated_date, placeholder: 'Descrição ', required: :true %>
+      <%= f.input :publicated_by, placeholder: 'Tipo de termo', required: :true %>
+      <%= f.input :link_term, placeholder: 'Ativo ? ', required: :true %>  
+       
+  </section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

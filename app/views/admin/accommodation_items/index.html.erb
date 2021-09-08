@@ -1,0 +1,22 @@
+<%= title_page "Item  de acomodação" %>
+
+<%= add_resource "Item de acomodação", new_admin_accommodation_item_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_accommodation_items_path, resource: AccommodationItem } %>
+
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= AccommodationItem.human_attribute_name(:name) %></th>
+      <th><%= AccommodationItem.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@accommodation_items, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @accommodationitem %>

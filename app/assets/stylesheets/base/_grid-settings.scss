@@ -1,0 +1,22 @@
+@import "neat/neat-helpers"; // or "../neat/neat-helpers" when not in Rails
+
+$border-box-sizing: true !default;
+
+$column: 78px;
+$gutter: 24px;
+$grid-columns: 12;
+$max-width: 1280px;
+
+$visual-grid: false;
+$visual-grid-color: red;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.2;
+
+// Define your breakpoints
+$tablet: new-breakpoint(max-width 800px 12);
+$iphoneX: new-breakpoint(min-height 812px 12);
+$mobile: new-breakpoint(max-width 480px 12);
+$small-mobile: new-breakpoint(max-width 320px 12);
+$desktop: new-breakpoint(min-width 900px 12);
+$large-screen: new-breakpoint(min-width 1440px 12);
+$hd-screen: new-breakpoint(min-width 1441px 12);

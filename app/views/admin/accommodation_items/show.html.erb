@@ -1,0 +1,24 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Itens de acomodação #{@accommodationitem.name} " %> 
+      		<%= edit_resource edit_admin_accommodation_item_path(@accommodationitem) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= AccommodationItem.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @accommodationitem.active %><br>
+            <b><%= AccommodationItem.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @accommodationitem.name %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_accommodation_items_path) %>
+    
+  
+  </footer>

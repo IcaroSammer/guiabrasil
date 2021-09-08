@@ -1,0 +1,18 @@
+<%= simple_form_for [:usuario, @icon] do |f| %>
+<%= f.error_notification %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Icones</h2>
+    </header>
+     <article>
+      <%= f.input :name, placeholder: 'Nome do icone ', required: :true %>
+      <%= f.text_area :description, placeholder: 'Descriçao do item', required: :true %>
+      <%= f.input :active, placeholder: 'Ativo ? ', required: :true %>    
+  </section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

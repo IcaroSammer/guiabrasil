@@ -1,0 +1,27 @@
+<tr>
+  <td><%= enterprise.name %></td>
+  <td><%= enterprise.email%></td>
+  <td><%= enterprise.active %></td>
+
+  <td>
+    <%= show_resource_with_icon admin_enterprise_path(enterprise) %>
+    <%= edit_resource edit_admin_enterprise_path(enterprise) %>
+    <% if enterprise.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_enterprise_path(enterprise),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_enterprise_path(enterprise),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+
+
+
+  </td>
+
+
+
+
+</tr>

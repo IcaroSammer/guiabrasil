@@ -1,0 +1,67 @@
+// Typography
+$base-font-family: 'Livvic', Helvetica, Arial, sans-serif;
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue:                #477dca;
+$gondola:             #281627;
+$turquoise:           #10A097;
+$mantle:              #319DD1;
+$rolling-stone:       #808183;
+$button-active-color: #789E91;
+$button-base-color:   #2B1024;
+$gray:                #707070;
+$gray-bg:             #F8F8F8;
+$dark-gray:           #333333;
+$medium-gray:         #6D7783;
+$light-gray:          #ECECEC;
+$black:               #000000;
+$old-black:           #010101;
+$custom-black:        #2E2E2E;
+$light-black:         #808284;
+$white:               #FFFFFF;
+$error:               #9E0808;
+$notice:              #00DC00;
+$rolling-stone:       #808183;
+$button-active-color: #789E91;
+$button-base-color:   #2B1024;
+$green:               #47C39B;
+$light-green:         #699E99;
+$cyan:                #68BFA3;
+$dark-blue:           #203534;
+$light-blue:          #61ABDA;
+$navy-purple:         #526CA0;
+$purple-default:      #6D659E;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $light-green;
+
+// Border
+$base-border-color: $turquoise;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: $turquoise;
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

@@ -1,0 +1,10 @@
+$navbar-bg: rgb(201, 201, 201);
+$navbar-brand-bg: transparent;
+$navbar-brand-logo: url(asset-path("logo.png"));
+
+$embed-responsive-aspect-ratios: (
+  (21 9),
+  (16 9),
+  (4 3),
+  (1 1)
+) !default;

@@ -1,0 +1,349 @@
+<%= f.fields_for :restaurant_survey do |ff| %>
+<div class="card">
+  <div class="card-header"><strong>Avaliação</strong></div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">5</td>
+          <td>4</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :couvert ,collection: 0..5 , required: true,  class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :couvert_comments  , class: "form-control"  %>
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">10-9</td>
+          <td>8-7</td>
+          <td>6-5</td>
+          <td>4-3</td>
+          <td>2-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :starter_course ,collection: 0..10 , class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :starter_course_comments, class: "form-control"  %>
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">5</td>
+          <td>4</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :presentation_course ,collection: 0..5, class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :presentation_course_comments,  class: "form-control"  %>
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">5</td>
+          <td>4</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :temperature ,collection: 0..5, class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :temperature_comments, class: "form-control"  %> 
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">15-13</td>
+          <td>12-10</td>
+          <td>9-7</td>
+          <td>6-4</td>
+          <td>3-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :quality ,collection: 0..15, class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :quality_comments, class: "form-control"  %>
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">10-9</td>
+          <td>8-7</td>
+          <td>6-5</td>
+          <td>4-3</td>
+          <td>2-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :baking ,collection: 0..10, class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :baking_comments, class: "form-control"  %>
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+           <td scope="row">15-13</td>
+          <td>12-10</td>
+          <td>9-7</td>
+          <td>6-4</td>
+          <td>3-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :harmony_ingredients ,collection: 0..15, class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :harmony_ingredients_comments, class: "form-control"  %> 
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">10-9</td>
+          <td>8-7</td>
+          <td>6-5</td>
+          <td>4-3</td>
+          <td>2-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :seasoning ,collection: 0..10, class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :seasoning_comments, class: "form-control"  %> 
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">10-9</td>
+          <td>8-7</td>
+          <td>6-5</td>
+          <td>4-3</td>
+          <td>2-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+   
+
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :dessert ,collection: 0..10, class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :dessert_comments, class: "form-control"  %> 
+      </div>
+    </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">MENÇÃO</th>
+          <th scope="col">E</th>
+          <th scope="col">MB</th>
+          <th scope="col">B</th>
+          <th scope="col">R</th>
+          <th scope="col">F</th>
+          <th scope="col">P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td scope="row">10-9</td>
+          <td>8-7</td>
+          <td>6-5</td>
+          <td>4-3</td>
+          <td>2-0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :final_sensation_meal ,collection: 0..10, class: "form-control"  %>
+      </div>
+      <div class="col-md-10">
+        <%= ff.input :final_sensation_meal_comments, class: "form-control"  %> 
+      </div>
+    </div>
+     
+
+    <div class="row form-group">
+      <div class="col-md-2">
+        <%= ff.input :active, as: :radio_buttons, required: :true, class: "form-control"  %>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<% end %>

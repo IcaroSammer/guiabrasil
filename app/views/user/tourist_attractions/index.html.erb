@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    <strong> Atrações Turisticas </strong>
+    <%= link_to raw('+<i class="fas fa-camera-retro"></i>'), new_user_tourist_attraction_path, class: "btn btn-primary float-right" %>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <%= render partial: 'layouts/filters/filters', locals: { path: filters_user_tourist_attractions_path, resource: TouristAttraction } %>
+    </div>  
+
+    <table class="table table-responsive-sm table-striped">
+      <thead>
+        <tr>
+          <th>
+            <%= Establishment.human_attribute_name(:name) %>
+          </th>
+          <th>
+            <%= TouristAttraction.human_attribute_name(:classification_order) %>
+          </th>
+          <th>
+            <%= TouristAttraction.human_attribute_name(:interest_score) %>
+          </th>
+          <th>
+            <%= TouristAttraction.human_attribute_name(:active) %>
+          </th>
+          <th>
+            -
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+
+          <%= display_list_for(@tourist_attractions, fields: 5) %>
+        
+      </tbody>
+    </table>
+
+  </div>
+  <div class="card-footer"><%= will_paginate @tourist_attractions %></div>
+</div>

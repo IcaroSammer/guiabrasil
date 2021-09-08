@@ -1,0 +1,226 @@
+/* Mobile ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+  .step-page {
+    .content {
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    .time-advice-container {
+      img {
+        width: 20%;
+      }
+
+      h4 {
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 40px;
+      }
+    }
+
+    /* STEP FORM */
+    .step-container {
+      .step-4 {
+        fieldset {
+          .form-check {
+            width: 100%;
+            margin-bottom: 50px;
+
+            &:first-of-type {
+              margin-top: 50px;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        label {
+          &.light-green {
+            color: $light-green;
+          }
+        }
+
+        .custom-column {
+          fieldset {
+            .form-check {
+              float: left;
+              width: auto;
+              margin-top: 0;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .step-form {
+        flex-direction: column;
+
+        .form-group {
+          margin-bottom: 50px;
+        }
+
+        label,
+        legend {
+          font-size: 40px;
+        }
+
+        fieldset {
+          margin-bottom: 50px;
+          background: transparent;
+          border: none;
+        }
+
+        select {
+          width: 100%;
+          font-size: 40px;
+        }
+
+        textarea {
+          padding: 10px 0 0 0;
+          height: 10vh;
+        }
+
+        .field-with-hint {
+          .hint {
+            top: -8px;
+            left: 170px;
+            border: solid 5px $dark-blue;
+            width: 60px;
+            height: 60px;
+            font-size: 32px;
+          }
+        }
+
+        .form-check {
+          align-items: center;
+          display: flex;
+          float: left;
+          margin-right: 40px;
+          height: 35px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+
+          .collection_check_boxes {
+            padding: 0 0 0 4rem;
+          }
+
+          label {
+            margin-bottom: 0;
+            color: $light-green;
+            font-size: 40px;
+            font-weight: normal;
+            line-height: 1.5;
+          }
+
+          input {
+            margin-bottom: 0;
+          }
+        }
+
+        .step-column {
+          width: 100%;
+
+          &:last-of-type {
+            margin-top: 50px;
+          }
+        }
+
+        .step-line {
+          width: 100%;
+          display: block;
+
+          .form-group {
+            width: calc(100% / 2 - 40px);
+            margin-right: 40px;
+            float: left;
+
+            &:last-of-type {
+              margin-right: 0;
+            }
+
+            .custom-label {
+              position: absolute;
+            }
+
+            .custom-input {
+              margin-top: 44px;
+            }
+          }
+
+          select {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    /* ACTION BUTTONS */
+    .action-buttons {
+      margin-bottom: 80px;
+
+      .btn {
+        font-size: 40px;
+        border-radius: 15px;
+        padding: 20px 35px;
+        border: 2px solid $light-green;
+        width: 100%;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .button-box {
+        width: 40%;
+      }
+
+      .step-bullets {
+        margin: 0 60px;
+
+        .bullet {
+          width: 25px;
+          height: 25px;
+          border: 2px solid $light-green;
+          margin-right: 25px;
+          border-radius: 50px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+
+          &.active {
+            background: $light-green;
+          }
+        }
+      }
+    }
+  }
+
+  /* COMPLETE STEPS */
+  #complete-steps {
+    flex-direction: column;
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 40px;
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .btn {
+      width: 50%;
+      text-align: center;
+      font-size: 30px;
+      margin: 0 auto 80px;
+    }
+  }
+}

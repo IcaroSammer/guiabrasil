@@ -1,0 +1,22 @@
+
+<%= title_page "Tipos de termo" %>
+
+<%= add_resource "Tipo de termo", new_admin_type_term_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_type_terms_path, resource: TypeTerm } %>
+
+<table class="table-page">
+  <thead>
+    <tr>
+      <th><%= TypeTerm.human_attribute_name(:name) %></th>
+      <th><%= TypeTerm.human_attribute_name(:description) %></th>
+      <th><%= TypeTerm.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@type_terms, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @type_terms %>

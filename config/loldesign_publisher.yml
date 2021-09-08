@@ -1,0 +1,79 @@
+paths:
+  logo:   'logo.png'
+  logout: '/admin/sair'
+
+  menu_links:
+    admins:
+      name: 'Administradores - Login'
+      path: admin_admins_path
+    users:
+      name: 'Reporteres'
+      path: admin_users_path
+    customers: 
+      name: 'Clientes'
+      path: admin_customers_path
+    rooms: 
+      name: 'Cômodos'
+      path: admin_rooms_path
+    occupations: 
+      name: 'Funções'
+      path: admin_occupations_path      
+    price_ranges:
+      name: 'Faixa de Preços'
+      path: admin_price_ranges_path
+    payment_types:
+      name: 'Tipos de Pagamento'
+      path: admin_payment_types_path
+    commforts:
+      name: 'Itens de Conforto'
+      path: admin_commforts_path
+    environments:
+      name: 'Ambientes'
+      path: admin_environments_path
+    form_payments:
+      name: 'Formas de Pagamento'
+      path: admin_form_payments_path
+    recreation_areas:
+      name: 'Áreas de Recreação'
+      path: admin_recreation_areas_path
+    rules:
+      name: 'Regras'
+      path: admin_rules_path
+    services:
+      name: 'Serviços'
+      path: admin_services_path
+    social_items:
+      name: 'Itens Sociais'
+      path: admin_social_items_path
+    structures:
+      name: 'Estruturas'
+      path: admin_structures_path
+    accommodation_items:
+      name: 'Items de Acomodação'
+      path: admin_accommodation_items_path
+    accommodation_types:
+      name: 'Tipos de Acomodação'
+      path: admin_accommodation_types_path      
+    accommodation_sizes:
+      name: 'Porte da Acomodação'
+      path: admin_accommodation_sizes_path            
+    booking_policies:
+      name: 'Politicas de Reservas'
+      path: admin_booking_policies_path      
+    icons:
+      name: 'Icones'
+      path: admin_icons_path
+    type_attractions:
+      name: 'Tipo de Atração'
+      path: admin_type_attractions_path
+    type_fornitures:
+      name: 'mobiliario'
+      path: admin_furnitures_path
+    business_establishments:
+      name: 'estabelecimentos comerciais'
+      path: admin_business_establishments_path
+    establishments-categories:
+      name: 'Categorias de estabelecimentos'
+      path: admin_establishment_categories_path    
+
+page_title: 'Área Administrativa das Fichas de Avaliação - Peregrino'

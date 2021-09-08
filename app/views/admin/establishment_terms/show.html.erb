@@ -1,0 +1,37 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Termo #{@establishment_term.name} " %> 
+      		<%= edit_resource edit_admin_establishment_term_path(@establishment_term) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= EstablishmentTerm.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @establishment_term.active %><br>
+            <b><%= EstablishmentTerm.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @establishment_term.name %><br>
+            <b><%= EstablishmentTerm.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @establishment_term.name %><br>
+            <b><%= EstablishmentTerm.human_attribute_name(:type_term) %>:&nbsp;</b>
+            <%= @establishment_term.active %><br>
+            <b><%= EstablishmentTerm.human_attribute_name(:publication_date) %>:&nbsp;</b>
+            <%= @establishment_term.name %><br>
+            <b><%= EstablishmentTerm.human_attribute_name(:inactivated_date) %>:&nbsp;</b>
+            <%= @establishment_term.name %><br>
+            <b><%= EstablishmentTerm.human_attribute_name(:publicated_by) %>:&nbsp;</b>
+            <%= @establishment_term.name %><br>
+            <b><%= EstablishmentTerm.human_attribute_name(:link_term) %>:&nbsp;</b>
+            <%= @establishment_term.name %><br>
+            
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_establishment_terms_path) %>
+    
+  
+  </footer>

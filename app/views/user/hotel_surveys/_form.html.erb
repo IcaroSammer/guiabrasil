@@ -1,0 +1,33 @@
+<%= simple_form_for [:user, @hotel_survey] do |f|%>
+<%= f.error_notification %>
+  	
+      <div class="container-md">
+      	<div class="card md-4">
+	      	<div class="card-body">
+	      	
+	          <h4>Nova Pesquisa de Hoteis </h4>
+							
+								<%= render partial: 'location' , locals: {f: f}  %>
+								<%= render partial: 'circulation' , locals: {f: f}  %>
+								<%= render partial: 'conservation' , locals: {f: f}  %>
+								<%= render partial: 'structure' , locals: {f: f}  %>
+								<%= render partial: 'recreation' , locals: {f: f}  %>
+								<%= render partial: 'social' , locals: {f: f}  %>
+								<%= render partial: 'services' , locals: {f: f}  %>
+								<%= render partial: 'accommodation' , locals: {f: f}  %>
+								<%= render partial: 'final_comments' , locals: {f: f}  %>
+																			
+
+							
+							<div class="btn-group">
+		          <%= f.button :submit ,"Salvar" , class: "btn btn-primary"   %>
+		      		<%= f.button :button, "Cancelar", type: "reset", class: "btn btn-danger" %>    
+							</div>
+					
+
+				</div>
+			</div>	
+		</div>
+			
+
+<% end %>

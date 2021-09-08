@@ -1,0 +1,30 @@
+<td>
+  <%= business_establishment.name %>
+</td>
+<td>
+  <%= business_establishment.description %>
+</td>
+
+<td>
+    <% if business_establishment.active %>
+      <i class="icon-thumbs-up" style="color: green;"></i>
+    <% else %>
+      <i class="icon-thumbs-down" style="color: red;"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= show_resource_with_icon admin_business_establishment_path(business_establishment) %>
+    <%= edit_resource edit_admin_business_establishment_path(business_establishment) %>
+    <%# remove_resource(admin_establishment_term_path(establishment_term), {})%>
+    <% if business_establishment.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_business_establishment_path(business_establishment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_business_establishment_path(business_establishment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

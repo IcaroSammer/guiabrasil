@@ -1,0 +1,21 @@
+<div class="card">
+	<div class="card-header"><strong>ANEXOS</strong></div>
+	<div class="card-body">
+
+		<div class="row form-group">
+			<div class="col-md-4">
+				<%= f.label :photos, "Selecione as Foto para anexar" %>
+				<%= f.file_field :photos, multiple: true %>
+			</div>
+			<div class="col-md-4">
+				<%= f.label :videos, "Selecione os Vídes para anexar" %>
+				<%= f.file_field :videos, multiple: true %>
+			</div>
+			<div class="col-md-4">
+				<%= f.label :documents, "Selecione outros Arquivos para anexar" %>
+				<%= f.file_field :documents, multiple: true %>
+			</div>
+		</div>
+
+	</div>
+</div>

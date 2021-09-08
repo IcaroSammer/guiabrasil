@@ -1,0 +1,18 @@
+<%= simple_form_for [:admin, @service] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Categoria de serviço</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Serviço ativa ?" %>
+      <%= f.input :name, placeholder: 'Nome do serviço ', required: :true %>
+      <%= f.input :description, placeholder: 'Descrição do serviço ', required: :true %>    
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

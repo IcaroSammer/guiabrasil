@@ -1,0 +1,11 @@
+<tr>
+  <td><%= tourist_attraction_survey.survey_date %></td>
+	<td><%= tourist_attraction_survey.final_comments %></td>
+	<td><%= tourist_attraction_survey.final_rate %></td>
+	<td><%= tourist_attraction_survey.active %></td>
+	<td>
+  <%= link_to raw('<i class="fas fa-eye" style="color:green"></i>'), user_tourist_attraction_survey_path(id: tourist_attraction_survey.id)  %>
+  <%= link_to raw('<i class="fas fa-edit style="color:blue"></i>'), edit_user_tourist_attraction_survey_path(id: tourist_attraction_survey.id) %>
+  <%= link_to raw('<i class="fas fa-times" style="color:red"></i>'), user_tourist_attraction_survey_path(tourist_attraction_survey), method: :delete, data: { confirm: 'Are you sure?' } %>
+</td>
+</tr>

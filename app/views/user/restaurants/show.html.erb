@@ -1,0 +1,30 @@
+<%= simple_nested_form_for [:user, @restaurant], html: { multipart: true }  do |f|%>
+<div class="container-md">
+  <div class="card">
+    <div class="card-header"><strong>Novo Restaurante</strong>
+      <div class="float-right">
+        Preencha os dados do restaurante que está avaliando
+      </div>
+
+    </div>
+    <div class="card-body">
+
+      <%= render partial: 'user/restaurants/show/establishment', locals: {f: f}  %>
+      <%= render partial: 'user/restaurants/show/restaurant_data', locals: {f: f}  %>
+      <%= render partial: 'user/restaurants/show/main_courses', locals: {f: f}  %>
+      
+      <%= render partial: 'user/restaurants/show/chef', locals: {f: f}  %>
+      <%= render partial: 'user/restaurants/show/survey', locals: {f: f}  %>
+      <%= render partial: 'user/restaurants/show/details', locals: {f: f}  %>
+      <%= render partial: 'user/restaurants/show/socialNetwork', locals: {f: f}  %>
+      <%= render partial: 'user/restaurants/show/attachements', locals: {f: f}  %>
+
+
+    </div>
+   
+
+  </div>
+</div>
+
+
+<% end %>

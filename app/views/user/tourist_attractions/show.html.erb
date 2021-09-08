@@ -1,0 +1,25 @@
+<%= simple_form_for [:user, @tourist_attraction ] do |f|%>
+<div class="container-md">
+  <div class="card">
+    <div class="card-header"><strong>Nova Atração Turísticas</strong>
+      <div class="float-right">
+        Preencha os dados da Atração Turística
+      </div>
+
+    </div>
+    <div class="card-body">
+
+      <%= render partial: 'user/tourist_attractions/show/establishment', locals: {f: f}  %>
+      <%= render partial: 'user/tourist_attractions/show/tourist_attraction_data', locals: {f: f}  %>
+      <%= render partial: 'user/tourist_attractions/show/survey', locals: {f: f}  %>
+      <%= render partial: 'user/tourist_attractions/show/socialNetwork', locals: {f: f}  %>
+      <%= render partial: 'user/tourist_attractions/show/attachments', locals: {f: f}  %>
+      
+    </div>
+    
+
+
+  </div>
+</div>
+
+<% end %>

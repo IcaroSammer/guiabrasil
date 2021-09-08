@@ -1,0 +1,17 @@
+<%= simple_form_for [:admin, @type_attraction] do |f| %>
+<%= f.error_notification %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Atrações da cidade</h2>
+    </header>
+     <article>
+      <%= f.input :name, placeholder: 'Nome da atração ', required: :true %>
+      <%= f.input :active, placeholder: 'Ativo ? ', required: :true %>  
+  </section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

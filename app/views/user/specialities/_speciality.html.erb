@@ -1,0 +1,10 @@
+<tr>
+  <td><%= speciality.name %></td>
+  <td><%= speciality.active %></td>
+  
+  <td><%= link_to 'Mostrar', user_speciality_path(speciality) %></td>
+  <td><%= link_to 'Editar', edit_user_speciality_path(speciality) %></td>
+  <td><%= link_to 'Inativar', user_speciality_path(speciality),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+</tr>

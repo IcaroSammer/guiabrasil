@@ -1,0 +1,31 @@
+
+
+<%= f.link_to_add  raw('<i class="fas fa-plus"></i>  Novo Horario'), :establishment_opening_hours, class: "btn btn-primary" %>
+<% f.fields_for :establishment_opening_hours do |hour| %>
+<div class="card">
+  <div class="card-header"><strong>Abertura e Fechamento</strong></div>
+  <div class="card-body">
+
+    <div class="form-group row">
+      <div class="col-md-2">
+        <%= hour.input :day_of_week, collection: ["Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo"], required: :true %>
+      </div>
+      <div class="col-md-5">
+        <%= hour.label :hour_opening, 'Horário de abertura' %>
+        <%= hour.text_field :hour_opening, type: 'time', required: :true, class: "form-control" %>
+      </div>
+      <div class="col-md-5">
+        <%= hour.label :hour_close, 'Horário de fechamento' %>
+        <%= hour.text_field :hour_close, type: 'time' , required: :true, class: "form-control" %>
+      </div>
+    </div>
+
+    
+
+    <div class="card-footer">
+      <%= hour.link_to_remove  raw('<i class="fas fa-trash-alt"></i> Remover'), class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+
+<% end %>

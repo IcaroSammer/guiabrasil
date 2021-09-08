@@ -1,0 +1,14 @@
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading"> 
+    	<h3>
+    		<%= link_to raw('<i class="fas fa-sign-out-alt" style="color:red; size:8px"></i>Sair'), destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true } %> 
+    	</h3>
+    </div>
+		<div class="list-group list-group-flush">
+			<%= link_to raw('<i class="fas fa-hotel"></i> Hoteis'), user_hotels_path, class: "list-group-item list-group-item-action bg-light" %>
+			<%= link_to raw('<i class="fas fa-utensils"></i> Restaurante'), user_restaurants_path, class: "list-group-item list-group-item-action bg-light" %>
+			<%= link_to raw('<i class="fas fa-camera-retro"></i> Atrações Turisticas'), user_tourist_attractions_path, class: "list-group-item list-group-item-action bg-light" %>
+			<%= link_to raw('<i class="fas fa-city"></i> Cidades'), user_cities_path, class: "list-group-item list-group-item-action bg-light" %>
+
+		</div>
+	</div>    

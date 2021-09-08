@@ -1,0 +1,24 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Categoria conforto #{@rule.name} " %> 
+      		<%= edit_resource edit_admin_rule_path(@rule) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Environment.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @rule.active %><br>
+            <b><%= Environment.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @rule.name %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_rules_path) %>
+    
+  
+  </footer>

@@ -1,0 +1,16 @@
+<%= simple_form_for [:user, @type_attractions] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Atrações da cidade</h2>
+    </header>
+     <article>
+      <%= f.input :name, placeholder: 'Nome da atração ', required: :true, readonly: true%>
+      <%= f.input :active, placeholder: 'Ativo ? ', required: :true, class: "form-control", readonly: true %>  
+  </section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

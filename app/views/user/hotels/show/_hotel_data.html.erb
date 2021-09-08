@@ -1,0 +1,97 @@
+<div class="card">
+	<div class="card-header"><strong>Dados do Hotel</strong></div>
+	<div class="card-body">
+
+		<div class="form-group row">
+			<div class="col-md-6">
+				<%= f.label :opening_date, class: "col-form-label" %>
+				
+				<% if f.object.opening_date.present? %>
+				<%= f.date_field :opening_date, class: "form-control datepicker" , type: "date", readonly: true %>
+				<%= "Data de abertura: #{f.object.opening_date.strftime('%d/%m/%Y')}" %>
+				<% else %>
+				<%= f.text_field :opening_date, class: "form-control datepicker" , type: "date", readonly: true %>
+				<% end %>	
+			</div>
+			<div class="col-md-6">
+				<%= f.label :major_renovation_date, class: "col-form-label"  %>
+				
+				<% if f.object.major_renovation_date.present? %>
+				<%= f.date_field :major_renovation_date , class: "form-control datepicker", type: "date", readonly: true %>
+				<%= "Data de ultima grande reforma: #{f.object.major_renovation_date.strftime('%d/%m/%Y')}" %>
+				<% else %>
+				<%= f.text_field :major_renovation_date , class: "form-control datepicker", type: "date", readonly: true %>
+				<% end %>
+			</div>  
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-4">
+				<%= f.label :number_of_employees, class: "col-form-label"  %>
+				<%= f.text_field :number_of_employees, class: "form-control", type:"number" , readonly: true %>
+			</div>
+			<div class="col-md-4">
+				<%= f.label :confort_rating, class: "col-form-label"  %>
+				<%= f.text_field :confort_rating, class: "form-control", type:"number" , readonly: true %>
+			</div>                  
+			<div class="col-md-4">
+				<%= f.label :classification_order, class: "col-form-label"  %>
+				<%= f.text_field :classification_order, class: "form-control", readonly: true %>
+			</div>
+		</div>  
+		<hr>
+		<div class="form-group row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-8">
+						<strong>
+							Faixa de Preço: <br>
+						</strong>
+						<% if f.object.price_range.present? %>
+						<%  PriceRange.where(id: f.object.price_range).each  do |it|  %>
+
+						<i class="fas fa-hand-holding-usd" style="color:green;"></i><%= it.description %><br>
+						<% end %>
+						<% else %>
+						Não cadastrada
+						<% end %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<% f.object.meal_included_price.reject!(&:blank?).each do |m| %>
+						<i class="far fa-check-circle" style="color: green"></i><%= m %><br>
+						<% end %>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<strong> Formas de Pagamento:<br>	</strong>
+				<% if f.object.payments_form.present? && !f.object.payments_form.reject!(&:blank?).nil? %>
+				
+				<%  FormPayment.where(id: f.object.payments_form).each  do |it|  %>
+				<i class="far fa-thumbs-up" style="color:green;"></i> <%= it.name %><br>
+				<% end %>
+				<% else %>
+				Não cadastrada
+				<%end%>
+				
+			</div>                  
+		</div>  
+		<div class="form-group row">
+			<div class="col-md-12">
+				<strong> Políticas de Reserva:<br>	</strong>
+				<% BookingPolicy.where(id: f.object.booking_policies).each do |item| %>
+				<i class="far fa-thumbs-up" style="color:green;"></i> <%= item.name %><br>
+				<% end %>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+<script>
+	$('#datepicker').datepicker({format: 'dd/mm/yyyy'});
+</script>

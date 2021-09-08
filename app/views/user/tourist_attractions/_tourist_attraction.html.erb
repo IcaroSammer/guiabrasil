@@ -1,0 +1,15 @@
+<tr>
+	<td><%= tourist_attraction.establishment.name %></td>
+	<td><%= tourist_attraction.classification_order %></td>
+	<td><%= tourist_attraction.interest_score %></td>
+	<td><%= tourist_attraction.active %></td>
+	<td>
+	<%= link_to raw('<i class="far fa-newspaper" style="color:gray"></i>'), new_user_publication_path(id: tourist_attraction.establishment.id) %>
+    <%= link_to raw('<i class="fas fa-eye" style="color:green"></i>'), user_tourist_attraction_path(tourist_attraction) %>
+    <%= link_to raw('<i class="fas fa-edit" style="color:blue"></i>'), edit_user_tourist_attraction_path(tourist_attraction) %>
+    <%= link_to raw('<i class="fas fa-times" style="color:red"></i>'), user_tourist_attraction_path(tourist_attraction), method: :delete, data: { confirm: 'Are you sure?'} %>
+	<%= link_to raw('<i class="far fa-clone" style="color:purple"></i>'), user_tourist_attraction_surveys_path(tourist_attraction_id: tourist_attraction.id) %>	
+	<%= link_to raw('<i class="	fas fa-user-edit" style="color:purple"></i>'), new_user_tourist_attraction_survey_path(tourist_attraction_id: tourist_attraction.id) %>
+	</td>
+</tr>
+

@@ -1,0 +1,33 @@
+<%= simple_form_for [:user, @main_course], 
+  wrapper_mappings: {
+    check_boxes:    :vertical_collection,
+    radio_buttons:  :vertical_collection,
+    file:           :custom_file,
+    boolean:        :custom_boolean_switch
+  }  do |f|%>
+  <%= f.error_notification %>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="row justify-content-center mb-3">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4>Cadastro de Icones do sistema </h4>
+            <p>Preencha registre os icones que o sistema irá usar para representação gráfica</p>
+            <%= f.input :name, placeholder: 'Nome prato ', required: :true %>
+            <%= f.input :description, placeholder: 'Descrição do prato ', required: :true %>
+            <%= f.label :plate_image, "Selecione a imagens do Prato" %><br />
+            <%= f.file_field :plate_image, multiple: true %><br />
+            <%= f.button :button, "Adicionar", type: "button", :id => 'botao' ,class: "add-email-button" %>
+            <%= f.input :ingredients, as: :array %>
+            <%= f.label :ingredients_image, "Selecione a imagens dos ingredients" %><br />
+            <%= f.file_field :ingredients_image, multiple: true %>            
+            <%= f.input :active, as: :radio_buttons, required: :true %> 
+            <%= f.button :submit ,"Enviar" , class: "btn-primary"   %>
+            <%= f.button :button, "Cancelar", type: "reset", class: "btn-outline-secondary" %>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

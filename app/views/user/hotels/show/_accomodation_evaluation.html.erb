@@ -1,0 +1,25 @@
+
+<div class="card">
+  <div class="card-header"><strong>Hospedagem</strong></div>
+  <div class="card-body">
+    <div class="row form-group">
+      <div class="col-md-6">
+        <strong>Tipo de Acomodação</strong><br>
+        <%  AccommodationType.where(id: f.object.type_of_accomodation).each  do |it|  %>
+        <i class="far fa-thumbs-up" style="color:green;"></i> <%= it.name %><br>
+        <% end %>
+      </div>
+
+      
+      <div class="col-md-6">
+        <strong>Diferenciais</strong><br>
+        <%  f.object.differentials.each  do |it|  %>
+        <% if not it == "" %>
+        <i class="far fa-thumbs-up" style="color:green;"></i> <%= it %><br>
+
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

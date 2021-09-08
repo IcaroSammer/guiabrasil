@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header">
+    <strong> Cidade </strong>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <%= render partial: 'layouts/filters/filters', locals: { path: filters_user_cities_path, resource: City } %>
+    </div>  
+
+    <table class="table table-responsive-sm table-striped">
+      <thead>
+        <tr>
+          <th>
+            <%= City.human_attribute_name(:country) %>
+          </th>
+          <th>
+            <%= City.human_attribute_name(:state) %>
+          </th>
+          <th>
+            <%= City.human_attribute_name(:city) %>
+          </th>
+          <th>
+            <small><strong>Número de hotéis</strong></small>
+          </th>
+          <th>
+            <small><strong>Número de restaurantes</strong></small>
+          </th>
+          <th>
+            <small><strong>Número de atrações turísticas</strong></small>
+          </th>
+          <th>
+            -
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+
+          <%= display_list_for(@cities, fields: 7) %>
+        
+      </tbody>
+    </table>
+
+  </div>
+  <div class="card-footer"><%= will_paginate @cities %></div>
+</div>

@@ -1,0 +1,30 @@
+<%= title_page "Pesquisas" %>
+
+<%= add_resource "Novo Pesquisa", new_user_restaurant_survey_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_user_restaurant_survey_path, resource: RestaurantSurvey } %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= RestaurantSurvey.human_attribute_name(:couvert) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:starter_course) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:presentation_course) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:temperature) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:quality) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:baking) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:harmony_ingredients) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:seasoning) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:final_sensation) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:dessert) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:final_sensation_meal) %></th>
+      <th><%= RestaurantSurvey.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@restaurant_surveys, fields: 12) %>
+  </tbody>
+</table>
+
+<%= will_paginate @restaurant_surveys %>

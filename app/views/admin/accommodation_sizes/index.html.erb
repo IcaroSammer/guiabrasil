@@ -1,0 +1,22 @@
+<%= title_page "Porte da Acomodação" %>
+
+<%= add_resource "Porte da Acomodação", new_admin_accommodation_size_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_accommodation_sizes_path, resource: AccommodationSize } %>
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= AccommodationSize.human_attribute_name(:name) %></th>
+      <th><%= AccommodationSize.human_attribute_name(:description) %></th>
+      <th><%= AccommodationSize.human_attribute_name(:number_of_guest) %></th>      
+      <th><%= AccommodationSize.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@accommodation_sizes, fields: 5) %>
+  </tbody>
+</table>
+
+<%= will_paginate @accommodation_sizes %>

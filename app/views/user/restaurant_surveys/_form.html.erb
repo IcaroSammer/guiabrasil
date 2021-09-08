@@ -1,0 +1,27 @@
+<%= simple_form_for [:user, @restaurant_survey] do |f| %>
+<%= f.error_notification %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de restaurant</h2>
+    </header>
+     <article>
+  	  <%= f.input :couvert ,collection: 0..5 %>
+  	  <%= f.input :starter_course ,collection: 0..10 %>
+  	  <%= f.input :presentation_course ,collection: 0..5 %>
+  	  <%= f.input :temperature ,collection: 0..5 %>
+  	  <%= f.input :quality ,collection: 0..15 %>
+  	  <%= f.input :baking ,collection: 0..10 %>
+  	  <%= f.input :harmony_ingredients ,collection: 0..15 %>
+  	  <%= f.input :seasoning ,collection: 0..5 %>
+  	  <%= f.input :final_sensation ,collection: 0..10 %>
+  	  <%= f.input :dessert ,collection: 0..10 %>
+  	  <%= f.input :final_sensation_meal ,collection: 0..10 %>
+      <%= f.input :active, placeholder: 'Ativo ? ', required: :true %>    
+  </section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

@@ -1,0 +1,26 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Categoria de serviço #{@service.name} " %> 
+      		<%= edit_resource edit_admin_service_path(@service) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Service.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @service.active %><br>
+            <b><%= Service.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @service.name %><br>
+            <b><%= Service.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @service.description %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_services_path) %>
+    
+  
+  </footer>

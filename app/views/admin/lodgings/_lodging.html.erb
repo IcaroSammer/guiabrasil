@@ -1,0 +1,26 @@
+<tr>
+  <td><%= lodging.name %></td>
+  <td><%= lodging.description %></td>
+  <td>
+    <% if lodging.active %>
+      <i class="icon-thumbs-up" style="color: green;"></i>
+    <% else %>
+      <i class="icon-thumbs-down" style="color: red;"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= show_resource_with_icon admin_lodging_path(lodging) %>
+    <%= edit_resource edit_admin_lodging_path(lodging) %>
+    <%# remove_resource(admin_lodging_path(lodging), {})%>
+  <% if accommodation_item.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_accommodation_item_path(accommodation_item),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_accommodation_item_path(accommodation_item),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

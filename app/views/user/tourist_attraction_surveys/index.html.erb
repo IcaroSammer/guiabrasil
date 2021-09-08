@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    <strong> Avaliações da Atração Turistica - <%= TouristAttraction.find(params[:tourist_attraction_id].present? ? params[:tourist_attraction_id] : f.object.tourist_attraction_id).establishment.name %></strong>
+    
+    </div>
+  <div class="card-body">
+    <div class="form-group">
+    <%= render partial: 'layouts/filters/filters', locals: { path: filters_user_tourist_attraction_surveys_path, resource: TouristAttractionSurvey } %>
+    </div>  
+    <table class="table table-responsive-sm table-striped">
+      <thead>
+        <tr>
+          <th>
+            <%= TouristAttractionSurvey.human_attribute_name(:survey_date) %>
+          </th>
+          <th>
+            <%= TouristAttractionSurvey.human_attribute_name(:final_comments) %>
+          </th>
+          <th>
+            <%= TouristAttractionSurvey.human_attribute_name(:final_rate) %>
+          </th>
+          <th>
+           <%= TouristAttractionSurvey.human_attribute_name(:active) %>
+          </th>
+          <th>
+          -
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <%= display_list_for(@tourist_attraction_surveys, fields: 5) %>
+      </tbody>
+    </table>      
+  </div>
+  <div class="card-footer"><%= will_paginate @tourist_attraction_surveys %></div>
+</div>

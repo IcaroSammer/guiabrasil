@@ -1,0 +1,20 @@
+
+
+
+<form class="form-inline">
+	<%= form_tag(path, method: :get) do %>
+
+		<% @filters_arr.each do |filter| %>
+			<%= render partial: 'layouts/filters/filter_inputs', locals: {filter: filter, resource: resource} %>
+
+		<% end %>
+		&nbsp;
+		<%= button_tag(type: "submit", class: "btn btn-primary") do %>
+			<i class="fas fa-search"></i>
+		<% end %>
+
+	<% end %>
+
+
+</form>          
+      

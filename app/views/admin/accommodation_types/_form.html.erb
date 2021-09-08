@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, @accommodationtype] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Registro de Nova categoria acomodação</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Item ativa ?" %>
+      <%= f.input :name, placeholder: 'Nome do item ', required: :true %>
+      <%= f.input :description, placeholder: 'Nome do item ', required: :true %>    
+      <%= f.input :business_establishment, as: :check_boxes, collection: human_attribute_establishment_types, input_html: {multiple: true}, required: :true %>
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>

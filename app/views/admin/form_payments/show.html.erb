@@ -1,0 +1,24 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Tipos de pagamento #{@formpayment.name} " %> 
+      		<%= edit_resource edit_admin_form_payment_path(@formpayment) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= FormPayment.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @formpayment.active %><br>
+            <b><%= FormPayment.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @formpayment.name %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_form_payments_path) %>
+    
+  
+  </footer>

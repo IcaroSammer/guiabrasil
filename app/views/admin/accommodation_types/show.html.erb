@@ -1,0 +1,26 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Tipos de acomodação #{@accommodationtype.name} " %> 
+      		<%= edit_resource edit_admin_accommodation_type_path(@accommodationtype) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= AccommodationType.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @accommodationtype.active %><br>
+            <b><%= AccommodationType.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @accommodationtype.name %><br>
+            <b><%= AccommodationType.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @accommodationtype.description %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_accommodation_types_path) %>
+    
+  
+  </footer>

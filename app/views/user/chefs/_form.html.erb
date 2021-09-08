@@ -1,0 +1,33 @@
+<%= simple_form_for [:user, @chef], 
+  wrapper_mappings: {
+    check_boxes:    :vertical_collection,
+    radio_buttons:  :vertical_collection,
+    file:           :custom_file,
+    boolean:        :custom_boolean_switch
+  }  do |f|%>
+  <%= f.error_notification %>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="row justify-content-center mb-3">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4>Cadastro de Chefe </h4>
+
+            <p>Preencha Preencha o Cadastro do Chefe do estavelecimento que está avaliando</p>
+            <%= f.error_notification %>
+            <%= f.input :name, placeholder: 'Nome do chef ', required: :true %>
+            <%= f.label :ingredients_image, "Selecione a foto do Chef" %><br />
+            <%= f.file_field :photo %>
+            <%= f.input :description, placeholder: 'Histórico do chef/cozinheiro principal ', required: :true %>
+            <%= f.input :service_time , placeholder: 'Tempo como chef ' %>
+            
+            
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>

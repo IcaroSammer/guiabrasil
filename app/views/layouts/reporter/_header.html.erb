@@ -1,0 +1,88 @@
+<header class="c-header c-header-light c-header-fixed">
+  <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
+    <span class="c-header-toggler-icon"></span>
+  </button>
+  <a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="#">
+  </a>
+  <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <ul class="c-header-nav mfs-auto">
+    <li class="c-header-nav-item px-3 c-d-legacy-none">
+      Olá <%= current_user.email %>
+    </li>
+  </ul>
+
+  <ul class="c-header-nav">
+    <li class="c-header-nav-item dropdown d-md-down-none mx-2" alt="Agendamentos do Mês">
+      <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <i class="far fa-calendar-alt c-icon"></i>
+        <span class="badge badge-pill badge-danger"> 0
+        </span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0">
+        <div class="dropdown-header bg-light"><strong>Agendamentos do Mês</strong></div>
+
+      </li>
+      <li class="c-header-nav-item dropdown d-md-down-none mx-2">
+        <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-calendar-week c-icon"></i>
+          <span class="badge badge-pill badge-warning">
+            0
+          </span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0">
+          <div class="dropdown-header bg-light"><strong>Agendamentos da Semana</strong></div>
+
+        </li>
+
+        <li class="c-header-nav-item dropdown d-md-down-none mx-2">
+          <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-calendar-day c-icon"></i>
+            <span class="badge badge-pill badge-info">
+              0
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0">
+            <div class="dropdown-header bg-light"><strong>Agendamentos de Hoje</strong></div>
+          
+
+          </li>
+
+          <li class="c-header-nav-item dropdown"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <div class="c-avatar">
+
+                <i class="fas fa-user c-avatar-img"></i>
+              
+              <span class="c-avatar-status bg-success"></span>
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right pt-0">
+
+            <div class="dropdown-header bg-light py-2">
+              <strong>
+                Itens
+              </strong>
+            </div>
+
+            <%= link_to raw('<i class="far fa-user c-icon mfe-2"></i> Meu Perfil'), edit_user_user_path(current_user),  class: "dropdown-item" %>
+
+            <a class="dropdown-item" href="#">
+              <i class="far fa-calendar-alt c-icon mfe-2"></i>
+              Agenda
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="fas fa-wallet c-icon mfe-2"></i> 
+              Conta Corrente
+            </a>
+
+            <div class="dropdown-divider"></div>
+            <%= link_to raw('<i class="fas fa-sign-out-alt c-icon mfe-2"></i>Sair/Deslogar'), destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true } , class: "dropdown-item" %> 
+
+          </div>
+        </li>
+        <button class="c-header-toggler c-class-toggler mfe-md-3" type="button" data-target="#aside" data-class="c-sidebar-show">
+        </button>
+      </ul>
+    </header>

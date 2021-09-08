@@ -1,0 +1,24 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Categoria conforto #{@commfort.name} " %> 
+      		<%= edit_resource edit_admin_commfort_path(@commfort) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Commfort.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @commfort.active %><br>
+            <b><%= Commfort.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @commfort.name %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_commforts_path) %>
+    
+  
+  </footer>

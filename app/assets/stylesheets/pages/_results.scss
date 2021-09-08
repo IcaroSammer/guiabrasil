@@ -1,0 +1,183 @@
+#results_page {
+  .results-introduction {
+    .default-column {
+      width: 40%;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 50px;
+    }
+
+    span {
+      margin-right: -2px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .table-legends {
+      width: 65%;
+
+      .only-circles {
+        margin: 0 0 15px 15px;
+
+        .legend {
+          width: 35px;
+          height: 35px;
+          border-radius: 50px;
+          margin-right: 32px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+
+          &.first {
+            background: $light-green;
+          }
+
+          &.second {
+            background: #AEBD53;
+          }
+
+          &.third {
+            background: #EFB82C;
+          }
+
+          &.fourth {
+            background: #EF7A38;
+          }
+
+          &.fifth {
+            background: #D64444;
+          }
+        }
+      }
+
+      p {
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .results-table {
+    overflow: auto;
+    padding-bottom: 0;
+
+    table {
+      &.table-label {
+        width: 180px;
+        position: absolute;
+        flex-direction: column;
+
+        thead {
+          tr {
+            height: 334px;
+
+            th {
+              border: none;
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            &:nth-of-type(2n),
+            &:last-of-type {
+              td {
+                background: $light-gray;
+              }
+            }
+          }
+        }
+
+        tbody,
+        thead {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          tr {
+            margin-bottom: 10px;
+          }
+
+          tr,
+          td {
+            width: 100%;
+            display: flex;
+            border: none;
+            text-align: right;
+            background: $white;
+
+            &:first-of-type {
+              width: 100%;
+              display: flex;
+              border: none;
+            }
+          }
+        }
+
+        &.show {
+          display: flex;
+        }
+      }
+
+      thead {
+        tr {
+          position: relative;
+
+          th {
+            width: 350px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+            color: $dark-blue;
+            padding: 30px 0;
+            border-left: 10px solid $white;
+            border-top: 10px solid $white;
+            background: $light-gray;
+
+            &:first-of-type {
+              width: 180px;
+              background: $white;
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          position: relative;
+
+          &:nth-of-type(2n),
+          &:last-of-type {
+            background: $light-gray;
+
+            td {
+              border-bottom: 10px solid $white;
+            }
+          }
+
+          td {
+            width: 370px;
+            border-left: 10px solid $white;
+            border-top: 10px solid $white;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+
+            &:first-of-type {
+              text-align: right;
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

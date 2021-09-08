@@ -1,0 +1,25 @@
+<tr>
+  <td><%= form_payment.name %></td>
+  <td>
+    <% if form_payment.active %>
+      <i class="icon-thumbs-up" style="color: green;"></i>
+    <% else %>
+      <i class="icon-thumbs-down" style="color: red;"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= show_resource_with_icon admin_form_payment_path(form_payment) %>
+    <%= edit_resource edit_admin_form_payment_path(form_payment) %>
+    <%# remove_resource(admin_form_payment_path(form_payment), {})%>
+    <% if form_payment.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_form_payment_path(form_payment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_form_payment_path(form_payment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

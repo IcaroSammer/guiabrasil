@@ -1,0 +1,11 @@
+
+<div class="card">
+<div class="card-header"><strong>Avaliação</strong></div>
+<div class="card-body">
+
+<%= f.fields_for :tourist_attraction_survey do |ff| %>
+    <%= render partial: 'user/tourist_attractions/show/survey/signage' , locals: {f: ff}  %>
+<% end %>
+
+</div>
+</div>

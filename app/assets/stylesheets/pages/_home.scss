@@ -1,0 +1,270 @@
+#home {
+  /* MAIN */
+  .main {
+    &-texts {
+      width: 40%;
+
+      h2,
+      h5 {
+        font-weight: normal;
+      }
+
+      h2 {
+        margin-bottom: 70px;
+        font-size: 36px;
+        line-height: 1.4;
+        font-weight: 600;
+      }
+
+      h5 {
+        margin-bottom: 80px;
+        font-size: 28px;
+      }
+    }
+
+    &-buttons {
+      a {
+        font-weight: 500;
+        font-size: 14px;
+        width: 45%;
+        text-align: center;
+        margin-left: 20px;
+        padding: 10px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  /* OUR SERVICES */
+  .our-services {
+    .section-content-container {
+      margin: 80px 0;
+
+      .default-column {
+        width: 27%;
+      }
+    }
+
+    .btn {
+      margin-bottom: 25px;
+
+      &.align-center {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+
+    .footer-section {
+      display: block;
+      text-align: center;
+
+      a {
+        font-weight: 700;
+      }
+    }
+  }
+
+  /* KNOWLEDGES */
+  .knowledges {
+    .title {
+      margin-bottom: 80px;
+    }
+
+    .step-box {
+      width: 30%;
+
+      &:nth-of-type(2) {
+        width: 27%;
+      }
+
+      .step-title {
+        width: 100%;
+        margin: 20px 0;
+        font-size: 32px;
+        font-weight: 200;
+        color: $light-green;
+        text-align: center;
+        margin-top: 0;
+      }
+
+      .step-description {
+        font-size: 17px;
+        text-align: center;
+        margin-bottom: 0;
+        width: 100%;
+      }
+    }
+
+    .footer-section {
+      font-size: 17px;
+      color: $medium-gray;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .step-fonts {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: $medium-gray;
+    }
+  }
+
+  /* STATEMENTS */
+  .statements {
+    .glide {
+      margin: 70px auto 0;
+      width: 50%;
+
+      .user-profile-img-box {
+        width: 180px;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 20px;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .statement-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+          text-align: center;
+          font-size: 16px;
+          color: $black;
+          margin: 30px 0;
+        }
+
+        .user-infos {
+          text-align: center;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+
+      &__bullets {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+      }
+
+      &__bullet {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        border-radius: 50px;
+        background: transparent;
+        border: solid 2px $light-green;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        &--active {
+          background: $light-green;
+        }
+
+        &:focus {
+            outline: none;
+        }
+      }
+    }
+
+    .controls {
+      position: absolute;
+      width: 100%;
+      top: 10%;
+
+      button {
+        background: transparent;
+        position: absolute;
+        display: flex;
+        top: 10%;
+        width: 10%;
+        height: 190px;
+
+        img {
+          position: absolute;
+          height: 100%;
+          top: 0;
+        }
+
+        &.arrow-left {
+          left: -40%;
+        }
+
+        &.arrow-right {
+          right: -40%;
+        }
+      }
+    }
+  }
+
+  /* ABOUT US */
+  .about-us {
+    .title {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .description {
+      margin-top: 50px;
+
+      h4,
+      h3 {
+        text-align: center;
+        font-weight: 300;
+        font-size: 19px;
+        margin-bottom: 10px;
+
+        &.turquoise {
+          font-size: 22px;
+          font-weight: 600;
+        }
+
+        .old-black {
+          font-weight: 500;
+        }
+      }
+    }
+
+    &-content {
+      margin-top: 65px;
+
+      .about-us-default-column {
+        width: 30%;
+
+        &:nth-of-type(2) {
+          width: 27%;
+        }
+
+        .item {
+          margin-bottom: 30px;
+
+          h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+          }
+
+          p {
+            font-size: 14px;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

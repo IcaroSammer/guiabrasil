@@ -1,0 +1,28 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Prato #{@chef.name} " %> 
+      		<%= edit_resource edit_user_chef_path(@chef) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Chef.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @chef.active %><br>
+            <b><%= Chef.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @chef.name %><br>
+            <b><%= Chef.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @chef.description %><br>
+            <b><%= Chef.human_attribute_name(:service_time) %>:&nbsp;</b>
+            <%= @chef.active %><br>
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: user_chefs_path) %>
+    
+  
+  </footer>

@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header"><strong>Regras</strong></div>
+  <div class="card-body">
+   <div class="form-group row">
+    <div class="col-md-12">  
+
+     <%  Rule.where(id: f.object.rule).each  do |it|  %>
+     <i class="far fa-thumbs-up" style="color:green;"></i> <%= it.name %><br>
+     <% end %>
+
+   </div>
+ </div>
+</div>
+</div>
+<hr>

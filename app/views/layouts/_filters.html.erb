@@ -1,0 +1,13 @@
+<section class='filter-box code'>
+  <section class="fields-wrapper two-columns">
+    <%= form_tag(path, method: :get) do %>
+      <% @filters_arr.each do |filter| %>
+        <%= render partial: 'layouts/filter_inputs', locals: {filter: filter, resource: resource} %>
+      <% end %>
+
+      <article class="filter-fields">
+        &nbsp; <%= submit_tag 'Filtrar', 'data-disable-with' => '...' %>
+      </article>
+    <% end %>
+  </section>
+</section>

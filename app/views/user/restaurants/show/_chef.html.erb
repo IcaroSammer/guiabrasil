@@ -1,0 +1,40 @@
+<%= f.fields_for :chef do |ff| %>
+<div class="card">
+  <div class="card-header"><strong>Informações do Chefe </strong></div>
+  <%= f.error_notification %>
+  <div class="card-body">
+
+    <div class="form-group row">
+    <div class="col-md-2">
+      <%= ff.input :active,readonly: true, as: :radio_buttons , required: :true %>
+    </div>            
+      <div class="col-md-5">
+        <%= ff.input :name,readonly: true, placeholder: 'Nome do chef ', required: :true %>
+
+      </div>
+      <div class="col-md-5">
+        <%= ff.label :photo, "Selecione a foto do Chef" %><br />
+        <%= ff.file_field :photo,readonly: true %>
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-6">
+
+        <%= ff.input :description,readonly: true, placeholder: 'Histórico do chef/cozinheiro principal ', required: :true %>
+
+      </div>
+      <div class="col-md-6">
+        <%= ff.input :service_time ,readonly: true, placeholder: 'Tempo como chef ' %>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% end %>
+
+

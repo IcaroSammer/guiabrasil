@@ -1,0 +1,37 @@
+
+
+<%= f.link_to_add  raw('<i class="fas fa-plus"></i>  Novo Prato'), :main_courses, class: "btn btn-primary" %>
+<% f.fields_for :main_courses do |plate| %>
+<div class="card">
+  <div class="card-header"><strong>Prato</strong></div>
+  <div class="card-body">
+
+    <div class="form-group row">
+      <div class="col-md-2">
+        <%= plate.input :active, as: :radio_buttons, required: :true %>
+      </div>
+      <div class="col-md-5">
+        <%= plate.input :name, placeholder: 'Nome prato ', required: :true, class: "form-control" %>
+      </div>
+      <div class="col-md-5">
+        <%= plate.input :description, placeholder: 'Descrição do prato ', required: :true, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-12">
+        <%= plate.label :plate_image, "Selecione a imagens do Prato" %><br />
+        <%= plate.file_field :plate_image, multiple: true %><br />
+      </div>
+    </div>
+
+    <hr>
+
+
+    <div class="card-footer">
+      <%= plate.link_to_remove  raw('<i class="fas fa-trash-alt"></i> Remover'), class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+
+<% end %>

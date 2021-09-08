@@ -1,0 +1,23 @@
+<%= title_page "Faixa de Preços" %>
+
+<%= add_resource "Faixa de Preço", new_admin_price_range_path %>
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_price_ranges_path, resource: PriceRange } %>
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= PriceRange.human_attribute_name(:id) %></th>
+      <th><%= PriceRange.human_attribute_name(:range_init) %></th>
+      <th><%= PriceRange.human_attribute_name(:range_end) %></th>
+      <th><%= PriceRange.human_attribute_name(:description) %></th>
+      <th><%= PriceRange.human_attribute_name(:business_establishment) %></th>
+      <th><%= PriceRange.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@price_ranges, fields: 7) %>
+  </tbody>
+</table>
+
+<%= will_paginate @price_ranges %>

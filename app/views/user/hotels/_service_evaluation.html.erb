@@ -1,0 +1,17 @@
+<%= f.fields_for :hotel_survey do |ff| %>
+
+<div class="multiselect">
+        <div class="selectBox" onclick="showCheckboxeseService()">
+          <select class="browser-default custom-select custom-select-lg mb-3">
+            <option>Serviços</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div id="service" >
+        	<%= render partial: 'user/hotel_surveys/services' , locals: {f: ff}  %>        	
+          <%= f.input :service,  as: :check_boxes ,collection: Service.all, input_html: {multiple: true }, class: "form-control" %>
+        </div>
+<hr>
+<% end %>
+
+

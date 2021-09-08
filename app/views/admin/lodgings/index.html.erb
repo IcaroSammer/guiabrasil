@@ -1,0 +1,23 @@
+<%= title_page "Categorias de tipo de alojamento" %>
+
+<%= add_resource "Categoria tipo de alojamento", new_admin_lodging_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_lodgings_path, resource: Lodging } %>
+
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= Lodging.human_attribute_name(:name) %></th>
+      <th><%= Lodging.human_attribute_name(:description) %></th>
+      <th><%= Lodging.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@lodgings, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @formpayment %>

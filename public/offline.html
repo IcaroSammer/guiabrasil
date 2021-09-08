@@ -1,0 +1,70 @@
+<section class="container">
+    <nav class="main">
+  <figure>
+    <img src="/assets/logo-d23aa4992af1526229ae553cff9408addd5878ecd2f9b1f543a81bdeb1754c3f.png">
+  </figure>
+  <ul>
+        <li>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/price_ranges">Faixa de Preços</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/payment_types">Tipos de Pagamento</a>
+        </li>
+        <li>
+          <a data-active="true" href="/admin/commforts">Itens de Conforto</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/environments">Ambientes</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/form_payments">Formas de Pagamento</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/recreation_areas">Áreas de Recreação</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/rules">Regras</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/services">Serviços</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/social_items">Itens Sociais</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/structures">Estruturas</a>
+        </li>
+        <li>
+          <a data-active="false" href="/admin/users">Reporteres</a>
+        </li>
+    </ul>
+</nav>
+    <section class="content-wrapper">
+
+      
+
+      
+<form class="simple_form new_commfort" id="new_commfort" novalidate="novalidate" action="/admin/commforts" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="aix0UXeEYwIioTTUQAQoNxGOrepwqHhPNv74T8tdl23acWxEUF3wWRmSWxD9DLsgwC9tm6Vwkh/xKH3vwzu5iQ==">
+  <section class="fields-wrapper two-columns">
+    <header>
+      <h2>Registro de Nova Categoria de Conforto</h2>
+    </header>
+     <article>
+      <fieldset class="form-group boolean optional commfort_active"><div class="form-check"><input name="commfort[active]" type="hidden" value="0"><input class="form-check-input boolean optional" id="my_id" type="checkbox" value="1" name="commfort[active]"><label class="form-check-label boolean optional" for="my_id">Categoria ativa ?</label></div></fieldset>
+      <div class="form-group string required commfort_name"><label class="form-control-label string required" for="commfort_name">Name <abbr title="required">*</abbr></label><input class="form-control string required" required="required" aria-required="true" placeholder="Nome da categoria " type="text" value="" name="commfort[name]" id="commfort_name"></div>  
+      <fieldset class="form-group check_boxes optional commfort_business_establishment"><legend class="col-form-label pt-0">Business establishment</legend><input type="hidden" name="commfort[business_establishment][]" value=""><div class="form-check"><input class="form-check-input check_boxes optional" type="checkbox" value="ATRACOES" name="commfort[business_establishment][]" id="commfort_business_establishment_atracoes"><label class="collection_check_boxes" for="commfort_business_establishment_atracoes">Atracoes</label></div><div class="form-check"><input class="form-check-input check_boxes optional" type="checkbox" value="CIDADES" name="commfort[business_establishment][]" id="commfort_business_establishment_cidades"><label class="collection_check_boxes" for="commfort_business_establishment_cidades">Cidades</label></div><div class="form-check"><input class="form-check-input check_boxes optional" type="checkbox" value="HOTEIS" name="commfort[business_establishment][]" id="commfort_business_establishment_hoteis"><label class="collection_check_boxes" for="commfort_business_establishment_hoteis">Hoteis</label></div><div class="form-check"><input class="form-check-input check_boxes optional" type="checkbox" value="RESTAURANTES" name="commfort[business_establishment][]" id="commfort_business_establishment_restaurantes"><label class="collection_check_boxes" for="commfort_business_establishment_restaurantes">Restaurantes</label></div></fieldset>  
+      <button name="button" type="button" id="button-click">Do smth</button> 
+    </article>
+</section>
+
+  <footer>
+    <div class="pretty medium secondary btn save"><input type="submit" name="commit" value="Salvar" data-disable-with="..."></div>
+  </footer>
+
+
+</form>
+<script src="/packs/js/teste-6d82116af2e33bda1e5d.js"></script>
+    </section>
+  </section>

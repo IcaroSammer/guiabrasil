@@ -1,0 +1,32 @@
+<%= f.fields_for :hotel_survey do |ff| %>
+
+<div class="card">
+  <div class="card-header"><strong>Social</strong></div>
+  <div class="card-body">
+
+   <%= render partial: 'user/hotels/show/survey/social' , locals: {f: ff}  %>
+
+   <div class="form-group row">
+    <div class="col-md-4">          
+     <%  SocialItem.where(id: f.object.social_item).each  do |it|  %>
+     <i class="far fa-thumbs-up" style="color:green;"></i> <%= it.name %><br>
+     <% end %>
+   </div>
+
+   <div class="col-md-4">
+     <%= f.input :number_of_bars, class: "form-control", readonly: true %>
+   </div>  
+
+   <div class="col-md-4">
+     <%= f.input :number_of_restaurants, class: "form-control", readonly: true %>
+   </div>  
+
+ </div>
+
+
+</div>
+</div>
+<hr>
+<% end %>
+
+

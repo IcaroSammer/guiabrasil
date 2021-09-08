@@ -1,0 +1,25 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Função #{@occupation.name} " %> 
+      		<%= edit_resource edit_admin_occupation_path(@occupation) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Occupation.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @occupation.active %><br>
+            <b><%= Occupation.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @occupation.name %><br>
+            <b><%= Occupation.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @occupation.description %><br>
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_occupations_path) %>
+    
+  
+  </footer>

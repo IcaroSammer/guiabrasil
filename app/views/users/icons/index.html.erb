@@ -1,0 +1,21 @@
+<%= title_page "Cadastro de icones" %>
+
+<%= add_resource "Novo Icone", new_user_icon_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_user_icons_path, resource: Icon } %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= Icon.human_attribute_name(:name) %></th>
+      <th><%= Icon.human_attribute_name(:description) %></th>
+      <th><%= Icon.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@icons, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @icons %>

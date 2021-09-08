@@ -1,0 +1,30 @@
+<h4> Pesquisa de Hotéis </h4>
+
+<%= link_to raw('+<i class="fas fa-poll-h"></i>'), new_user_hotel_survey_path, class: "btn btn-primary" %>
+
+<%= render partial: 'layouts/filters/filters', locals: { path: filters_user_hotel_surveys_path, resource: HotelSurvey } %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <%= HotelSurvey.human_attribute_name(:survey_date) %>
+    </div>
+    <div class="col-sm">
+      <%= HotelSurvey.human_attribute_name(:final_rate) %>
+    </div>
+    <div class="col-sm">
+      <%= HotelSurvey.human_attribute_name(:final_comments) %>
+    </div>
+
+    <div class="col-sm">
+      -
+    </div>
+    
+   <div class="row">
+    <%= display_list_for(@hotel_surveys, fields: 12) %>
+  </div>
+  
+  </div>
+</div>
+
+<%= will_paginate @hotel_surveys %>

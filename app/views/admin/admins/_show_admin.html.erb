@@ -1,0 +1,26 @@
+	<section class='fields-wrapper two-columns'>
+		<header>
+			<h2>Administrador</h2>
+		</header>
+		<article>
+			<% if @admin.photo.attached? %>
+					<%= image_tag(@admin.photo, class: "mr-3") %>
+			<% else %>
+					<%= image_tag 'people-default.png', resize: "100x150>", class: "mr-3" %>
+			<% end %>
+		</article>    
+		<article>
+			<b><%= Admin.human_attribute_name(:name) %>:&nbsp;</b>
+			<%= @admin.name %><br />      
+			<b><%= Admin.human_attribute_name(:email) %>:&nbsp;</b>
+			<%= @admin.email %><br />            
+			<b><%= Admin.human_attribute_name(:phone_number) %>:&nbsp;</b>
+			<%= @admin.phone_number %><br />            
+		</article>
+		
+	</section>
+
+	<footer>
+		<%= cancel_action(path: admin_admins_path) %>
+	</footer>
+

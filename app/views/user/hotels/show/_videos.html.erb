@@ -1,0 +1,27 @@
+
+  
+<div class="card">
+	<div class="card-header"><strong>Videos Anexados</strong></div>
+	<div class="card-body">
+
+		<% if f.object.videos.attached? %>
+			<div class="row">
+			<% f.object.videos.each do |video| %>
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header"></div>
+					<div class="card-body">
+						
+						<%= video_tag(url_for(video), style: "width:100%;height:auto", :controls => true) %>
+						 
+
+					</div>
+
+				</div>
+			</div>
+				<% end %>
+		</div>
+		<% end %>
+	</div>
+</div>
+<hr>

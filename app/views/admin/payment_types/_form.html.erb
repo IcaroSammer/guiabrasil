@@ -1,0 +1,17 @@
+<%= simple_form_for [:admin, @payment_type] do |f| %>
+  <section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Cadastro de Faixa de Preço</h2>
+    </header>
+      <article>
+        <%= f.input :active, label: "Ativo?" %>
+        <%= f.input :name, required: :true %>
+        <%= f.input :business_establishment, as: :check_boxes, collection: human_attribute_establishment_types, input_html: {multiple: true}, required: :true %>
+      </article>       
+  </section>
+
+  <footer>
+    <%= submit_button f %>
+    <%= cancel_action(path: admin_payment_types_path) %>
+  </footer>
+<% end -%>

@@ -1,0 +1,22 @@
+<%= title_page "Tipos de Pagamento" %>
+
+<%= add_resource "Tipo de Pagamento", new_admin_payment_type_path %>
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_payment_types_path, resource: PaymentType } %>
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= PaymentType.human_attribute_name(:id) %></th>
+      <th><%= PaymentType.human_attribute_name(:name) %></th>
+      
+      <th><%= PaymentType.human_attribute_name(:business_establishment) %></th>
+      <th><%= PaymentType.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@payment_types, fields: 5) %>
+  </tbody>
+</table>
+
+<%= will_paginate @payment_types %>

@@ -1,0 +1,30 @@
+<div class="card">
+	<div class="card-header"><strong>Avaliação Final</strong></div>
+	<div class="card-body">
+		<div class="row form-group">
+			<div class="col-md-2">
+				<%= f.input :final_rate,  class: "form-control", readonly: true %>
+			</div>
+			<div class="col-md-10">
+				<%= f.input :final_comments, as: :text, class: "form-control", readonly: true %>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-md-6">
+				<%= f.input :active, as: :radio_buttons, class: "form-control", readonly: true %>
+			</div>
+			<div class="col-md-6">
+				<%= f.label :survey_date, "Data da Pesquisa", class: "form-control-label" %>
+				<% if f.object.survey_date.present? %>
+				<%= f.date_field :survey_date, class: "form-control", type: "date", readonly: true %>
+				<%= "Data da avaliação: #{f.object.survey_date.strftime('%d/%m/%Y')}" %>
+				<% else %>
+				<%= f.text_field :survey_date, class: "form-control", type: "date", readonly: true %>
+				<% end %>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<hr>

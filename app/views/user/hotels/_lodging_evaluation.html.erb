@@ -1,0 +1,19 @@
+<div class="multiselect">
+	<div class="selectBox" onclick="showCheckboxeseLodging()">
+		<select class="browser-default custom-select custom-select-lg mb-3">
+			<option>Tipos de Acomodação</option>
+		</select>
+		<div class="overSelect"></div>
+	</div>
+	<div id="lodging">
+		<div class="row form-group">
+			<div class="col-md-6">
+				
+				<%= f.input :lodging, as: :check_boxes ,collection: Lodging.all, input_html: {multiple: true }, class: "form-control" %>
+			</div>
+			<div class="col-md-6">
+				<%= f.input :number_of_accommodations, class: "form-control"  %>
+			</div>   
+		</div>
+	</div>
+</div>

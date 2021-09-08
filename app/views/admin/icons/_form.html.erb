@@ -1,0 +1,32 @@
+<%= simple_form_for [:admin, @icon], 
+  wrapper_mappings: {
+    check_boxes:    :vertical_collection,
+    radio_buttons:  :vertical_collection,
+    file:           :custom_file,
+    boolean:        :custom_boolean_switch
+  }  do |f|%>
+
+  <section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Novo Icone</h2>
+    </header>
+    <article>
+      <%= f.label "Selecione a imagem do icone" %>
+      <%= f.file_field :image %>
+    </article>
+    <article>
+      <%= f.input :name, wrapper_html: {class: 'col-9'} %>      
+      <%= f.input :description, wrapper_html: {class: 'col-9'} %>      
+    </article>
+    <article>
+      <%= f.input :business_establishment, as: :check_boxes, collection: human_attribute_establishment_types, input_html: {multiple: true}, required: :true %>
+      <%= f.input :active, wrapper_html: {class: 'col-9'} %>
+    </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_icons_path) %>
+    <%= submit_button f %>
+  </footer>
+<% end %>
+

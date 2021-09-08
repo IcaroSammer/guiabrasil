@@ -1,0 +1,8 @@
+<div class="row form-group">
+	<div class="col-md-3">
+		<%= f.input :location_score, collection: 0..10, class: "form-control", input_html: {id:"numberonly"}  %>
+	</div>
+	<div class="col-md-9">
+		<%= f.input :location_score_comments,  as: :text, class: "form-control"  %>
+	</div>
+</div>

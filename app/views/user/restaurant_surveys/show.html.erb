@@ -1,0 +1,43 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Survey " %> 
+      		<%= edit_resource edit_user_survey_path(@restaurant_survey) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= RestaurantSurvey.human_attribute_name(:couvert) %>:&nbsp;</b>
+            <%= @restaurant_survey.couvert %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:starter_course) %>:&nbsp;</b>
+            <%= @restaurant_survey.starter_course %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:presentation_course) %>:&nbsp;</b>
+            <%= @restaurant_survey.presentation_course %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:quality) %>:&nbsp;</b>
+            <%= @restaurant_survey.quality %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:baking) %>:&nbsp;</b>
+            <%= @restaurant_survey.baking %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:harmony_ingredients) %>:&nbsp;</b>
+            <%= @restaurant_survey.harmony_ingredients %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:seasoning) %>:&nbsp;</b>
+            <%= @restaurant_survey.seasoning %><br>
+            <b><%= Suryey.human_attribute_name(:final_sensation) %>:&nbsp;</b>
+            <%= @restaurant_survey.final_sensation %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:dessert) %>:&nbsp;</b>
+            <%= @restaurant_survey.dessert %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:final_sensation_meal) %>:&nbsp;</b>
+            <%= @restaurant_survey.final_sensation_meal %><br>
+            <b><%= RestaurantSurvey.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @restaurant_survey.active %><br>
+           
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: user_restaurant_surveys_path) %>
+    
+  
+  </footer>

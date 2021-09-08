@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, @room] do |f| %>
+	<section class='fields-wrapper two-columns'>
+    <header>
+      <h2>Novo Cômodo</h2>
+    </header>
+     <article>
+      <%= f.input :active, label: "Cômodo ativo ?" %>
+      <%= f.input :name, placeholder: 'Nome do cômodo ', required: :true %>  
+      <%= f.input :description, placeholder: 'Descrição do cômodo ', required: :true %>  
+    </article>
+</section>
+
+  <footer>
+    <%= submit_button f %>
+  </footer>
+
+
+<% end %>
+

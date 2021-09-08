@@ -1,0 +1,26 @@
+<tr>
+  <td><%= commfort.name %></td>
+  
+  <td>
+    <% if commfort.active %>
+      <i class="icon-thumbs-up" style="color: green;"></i>
+    <% else %>
+      <i class="icon-thumbs-down" style="color: red;"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= show_resource_with_icon admin_commfort_path(commfort) %>
+    <%= edit_resource edit_admin_commfort_path(commfort) %>
+    <%# remove_resource(admin_commfort_path(commfort), {})%>
+    <% if commfort.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_commfort_path(commfort),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_commfort_path(commfort),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

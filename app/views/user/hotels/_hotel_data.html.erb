@@ -1,0 +1,75 @@
+<div class="card">
+	<div class="card-header"><strong>Dados do Hotel</strong></div>
+	<div class="card-body">
+
+		<div class="form-group row">
+			<div class="col-md-6">
+				<%= f.label :opening_date, class: "col-form-label" %>
+				
+				<% if f.object.opening_date.present? %>
+				<%= f.date_field :opening_date, class: "form-control datepicker" , type: "date"%>
+				<%= "Data de abertura: #{f.object.opening_date.strftime('%d/%m/%Y')}" %>
+				<% else %>
+				<%= f.text_field :opening_date, class: "form-control datepicker" , type: "date"%>
+				<% end %>	
+			</div>
+			<div class="col-md-6">
+				<%= f.label :major_renovation_date, class: "col-form-label"  %>
+				
+				<% if f.object.major_renovation_date.present? %>
+				<%= f.date_field :major_renovation_date , class: "form-control datepicker", type: "date" %>
+				<%= "Data de ultima grande reforma: #{f.object.major_renovation_date.strftime('%d/%m/%Y')}" %>
+				<% else %>
+				<%= f.text_field :major_renovation_date , class: "form-control datepicker", type: "date" %>
+				<% end %>
+			</div>  
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-4">
+				<%= f.input :number_of_employees, class: "form-control", input_html: {id:"numberonly"} %>
+			</div>
+			<div class="col-md-4">
+				<%= f.input :confort_rating, class: "form-control", input_html: {id:"numberonly"}  %>
+			</div>                  
+			<div class="col-md-4">
+				<%= f.label :classification_order, class: "col-form-label"  %>
+				<%= f.text_field :classification_order, class: "form-control" %>
+			</div>
+		</div>  
+		<hr>
+		<div class="form-group row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-12">
+						<%= f.input :price_range, collection: PriceRange.where("business_establishment @> ?", '{HOTEIS}').collect { |pr| [pr.description, pr.id] }, class: "form-control" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<%= f.input :meal_included_price, as: :check_boxes, collection: ["Sem café da manhã","Café da manhã","Almoço","Jantar","All Inclusive"], input_html: {multiple: true } ,class: "form-control " %>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 ">
+				<%= f.input :payments_form, as: :check_boxes, 
+				collection:  FormPayment.where("business_establishment @> ?", '{HOTEIS}'), 
+				checked: FormPayment.where(id: f.object.payments_form).pluck(:id), 
+				input_html: {multiple: true }, class: "form-control " %>
+			</div>                  
+		</div>  
+
+		<div class="form-group row">
+			<div class="col-md-12">
+				<%= f.input :booking_policies, as: :check_boxes, 
+				collection:  BookingPolicy.where("business_establishment @> ?", '{HOTEIS}'), 
+				checked: BookingPolicy.where(id: f.object.booking_policies).pluck(:id), 
+				input_html: {multiple: true }, class: "form-control " %>
+			</div>
+		</div>
+
+	</div>
+</div>
+<script>
+	$('#datepicker').datepicker({format: 'dd/mm/yyyy'});
+</script>

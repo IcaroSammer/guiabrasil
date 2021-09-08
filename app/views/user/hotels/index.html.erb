@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header">
+   <strong> Hotéis </strong>
+   <%= link_to raw('+<i class="fas fa-hotel"></i>'), new_user_hotel_path, class: "btn btn-primary float-right" %>      
+ </div>
+ <div class="card-body">
+  <div class="form-group">
+    <%= render partial: 'layouts/filters/filters', locals: { path: filters_user_hotels_path, resource: Hotel } %>
+    
+  </div>  
+
+  <table class="table table-responsive-sm table-striped">
+   <thead>
+    <tr>
+      <th>
+        <%= Establishment.human_attribute_name(:name) %>
+      </th>
+      <th>
+        <%= Hotel.human_attribute_name(:category) %>
+      </th>
+      <th>
+        <%= Hotel.human_attribute_name(:final_score_evaluation) %>
+      </th>
+      <th>
+        <%= Hotel.human_attribute_name(:accommodation_type) %>
+      </th>
+      <th>
+        -
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <%= display_list_for(@hotels, fields: 12) %>
+    
+  </tbody>
+</table>
+
+</div>
+<div class="card-footer"><%= will_paginate @hotels %></div>
+</div>
+
+
+
+
+

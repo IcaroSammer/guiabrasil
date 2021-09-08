@@ -1,0 +1,26 @@
+<tr>
+  <td><%= recreation_area.name %></td>
+  <td><%= recreation_area.description %></td>
+  <td>
+    <% if recreation_area.active %>
+      <i class="icon-thumbs-up" style="color: green;"></i>
+    <% else %>
+      <i class="icon-thumbs-down" style="color: red;"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= show_resource_with_icon admin_recreation_area_path(recreation_area) %>
+    <%= edit_resource edit_admin_recreation_area_path(recreation_area) %>
+    <%# remove_resource(admin_recreation_area_path(recreation_area), {})%>
+    <% if recreation_area.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_recreation_area_path(recreation_area),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_recreation_area_path(recreation_area),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

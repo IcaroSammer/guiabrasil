@@ -1,0 +1,53 @@
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top  nav-top-background">
+    <div class="container">
+      <%= image_pack_tag 'logo_peregrino.png', class: "navbar-brand logo-header" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+             
+          </li>
+          <li class="nav-item active">
+              <%= link_to raw('<i class="fas fa-store-alt"></i><br />Home'), root_path, class: "nav-link header-icons" %>
+              <span class="sr-only">(current)</span>
+            
+          </li>
+          <li class="nav-item">
+            <%= link_to raw('<i class="fas fa-camera-retro"></i><br />Área do Reporter'), user_root_path, class: "nav-link header-icons" %>
+          </li>
+          <li class="nav-item">
+              <%= link_to raw('<i class="fas fa-users-cog"></i><br />Configurações'), admin_admins_path, class: "nav-link header-icons" %>
+          </li>
+          <% if current_customer.present? %> 
+          <li class="nav-item">
+            
+            <li class="dropdown">
+        <a class="dropdown-toggle nav-link header-icons" data-toggle="dropdown" href="#">
+            
+               <i class="far fa-smile-wink"></i><br />Bem Vindo 
+
+            
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to raw('<i class="fas fa-sign-out-alt"></i>Perfil'), edit_customer_profile_path(current_customer) %> 
+          </li>
+          <li>
+            <%= link_to raw('<i class="fas fa-sign-out-alt"></i>Sair'), destroy_customer_session_path, :method => :delete, :data => { :no_turbolink => true } %> 
+          </li>
+          
+        </ul>
+      </li>
+          </li>
+          <% else %>
+           <li class="nav-item">
+              <%= link_to raw('<i class="far fa-smile-wink"></i><br />Cadastre-se'), new_customer_session_path, class: "nav-link header-icons" %>
+          </li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </nav>

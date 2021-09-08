@@ -1,0 +1,26 @@
+<tr>
+  <td><%= environment.name %></td>
+  
+  <td>
+    <% if environment.active %>
+      <i class="icon-thumbs-up" style="color: green;"></i>
+    <% else %>
+      <i class="icon-thumbs-down" style="color: red;"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= show_resource_with_icon admin_environment_path(environment) %>
+    <%= edit_resource edit_admin_environment_path(environment) %>
+    <%# remove_resource(admin_environment_path(environment), {})%>
+    <% if environment.active == true %>
+  <%= link_to raw('<i class="icon-cancel" style = "color:red"></i>'), admin_environment_path(environment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+     
+  <%= link_to raw('<i class="icon-check"style = "color:green"></i>'), admin_environment_path(environment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   <%end%>
+  </td>
+</tr>

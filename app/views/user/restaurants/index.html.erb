@@ -1,0 +1,34 @@
+<div class="card">
+	<div class="card-header">
+		<strong> Restaurantes </strong>
+		<%= link_to raw('+<i class="fas fa-hotel"></i>'), new_user_restaurant_path, class: "btn btn-primary float-right" %>      
+	</div>
+	<div class="card-body">
+		<div class="form-group">
+			<%= render partial: 'layouts/filters/filters', locals: { path: filters_user_restaurants_path, resource: Restaurant } %>
+		</div>  
+
+		<table class="table table-responsive-sm table-striped">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Especialidade</th>
+					<th>Categoria</th>
+					<th>Nota final</th>
+					<th>Classificação</th>
+					<th>
+						&nbsp;
+					</th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+				<%= display_list_for(@restaurants, fields: 6) %>
+
+			</tbody>
+		</table>
+
+	</div>
+	<div class="card-footer"><%= will_paginate @restaurants %></div>
+</div>

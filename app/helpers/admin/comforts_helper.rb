@@ -1,0 +1,2 @@
+module Admin::ComfortsHelper
+end

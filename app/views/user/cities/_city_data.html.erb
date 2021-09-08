@@ -1,0 +1,73 @@
+<div class="card">
+	<div class="card-header"><strong>Informações da Cidade</strong></div>
+	<div class="card-body">
+
+
+		<div class="form-group row">
+			<div class="col-md-2">
+				<%= f.input :best_time, required: :true, class: "form-control" %>
+			</div>
+			<div class="col-md-6">
+				<%= f.input  :how_find, required: :true, class: "form-control" %>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<div class="col-md-4">
+				<%= f.label :country, "País: ", class: "col-form-label"  %><br>
+        <%= f.country_select :country, priority_countries = ["Brazil", "Uruguay", "Argentina", "Paraguay"], options = {}, html_options = {:class => "form-control"} %>
+			</div>
+			<div class="col-md-4">
+				<%= f.input :state,  class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				
+				<%= f.input :city, class: "form-control" %>
+			</div>
+
+		</div>
+
+		<hr>
+		<div class="form-group row">
+			<div class="col-md-4">
+				<%= f.input :biome, class: "form-control" %>
+			</div>                  
+			<div class="col-md-6">
+				<%= f.input :region, class: "form-control" %>
+			</div>
+		</div>  
+		<hr>
+		<div class="form-group row">
+
+
+			<div class="col-md-10">
+				<%= f.input :best_experiences, as: :text, class: "form-control"  %>
+			</div>
+
+			<div class="col-md-2">
+				<%= f.input :differentials,  as: :check_boxes ,collection: ["Charme", "Conceitual", "Histórico", "Lgbti", "Pet Friendly", "Selo Verde"], input_html: {multiple: true }, class: "form-control" %>
+			</div>
+		</div>	
+		<hr>
+		<div class="form-group row">
+
+
+			<div class="col-md-2">
+				<%= f.input :perfect_day,  class: "form-control"  %>
+			</div>
+
+			<div class="col-md-2">
+				<%= f.input :special, class: "form-control" %>
+			</div>
+			<div class="col-md-8">
+				<%= f.input :perfect_day_remarks, as: :text, class: "form-control" %>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+
+
+

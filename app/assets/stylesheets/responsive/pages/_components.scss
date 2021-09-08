@@ -1,0 +1,104 @@
+/* Mobile ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+  /* HOW IT WORKS */
+  .how-it-works {
+    &.sell-mode {
+      .steps-container {
+        .step-box {
+          &:nth-of-type(2) {
+            img {
+              margin-top: 45px;
+            }
+          }
+        }
+      }
+    }
+
+    .steps-container {
+      flex-direction: column;
+
+      .step-box {
+        width: 100%;
+        display: block;
+        margin-bottom: 50px;
+
+        &:nth-of-type(2) {
+          width: 100%;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        img {
+          height: 11vh;
+          float: left;
+          margin: 42px 50px 0 0;
+        }
+
+        .step-title {
+          margin: 20px 0;
+          font-size: 34px;
+        }
+
+        .step-description {
+          font-size: 34px;
+        }
+      }
+    }
+
+    .btn {
+      width: 50%;
+      font-size: 32px;
+    }
+  }
+
+  /* OUR SERVICES */
+  .want-buy-column {
+    margin-bottom: 50px;
+  }
+
+  .want-buy-column,
+  .want-sell-column {
+    .our-services-column-title {
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
+
+    .description {
+      margin: 20px 0;
+      font-size: 34px;
+    }
+
+    ul {
+      li {
+        list-style: disc;
+        margin-bottom: 5px;
+        font-size: 34px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .btn {
+      margin: 40px auto 20px 0;
+      font-size: 34px;
+    }
+  }
+
+  /* CONTACT AREA */
+  .contact-area {
+    .content {
+      h2 {
+        font-size: 36px;
+      }
+    }
+
+    .btn {
+      width: 50%;
+      font-size: 32px;
+    }
+  }
+}

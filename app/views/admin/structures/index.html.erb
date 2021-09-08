@@ -1,0 +1,22 @@
+<%= title_page "Categorias de estrutura" %>
+
+<%= add_resource "Estrutura", new_admin_structure_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_structures_path, resource: Structure } %>
+
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= Structure.human_attribute_name(:name) %></th>
+      <th><%= Structure.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@structures, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @structures %>

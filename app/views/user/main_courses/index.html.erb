@@ -1,0 +1,22 @@
+
+<%= title_page "Pratos" %>
+
+<%= add_resource "Novo Prato", new_user_main_course_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_user_main_courses_path, resource: MainCourse } %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= MainCourse.human_attribute_name(:name) %></th>
+      <th><%= MainCourse.human_attribute_name(:description) %></th>
+      <th><%= MainCourse.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@main_courses, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @main_courses %>

@@ -1,0 +1,21 @@
+<%= title_page "Forma de pagamento" %>
+
+<%= add_resource "Forma de Pagamento", new_admin_form_payment_path %>
+
+<%= render partial: 'layouts/filters', locals: { path: filters_admin_form_payments_path, resource: FormPayment } %>
+
+
+<table class='table-page'>
+  <thead>
+    <tr>
+      <th><%= FormPayment.human_attribute_name(:name) %></th>
+      <th><%= FormPayment.human_attribute_name(:active) %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= display_list_for(@form_payments, fields: 3) %>
+  </tbody>
+</table>
+
+<%= will_paginate @formpayment %>

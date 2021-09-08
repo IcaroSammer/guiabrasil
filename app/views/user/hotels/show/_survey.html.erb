@@ -1,0 +1,23 @@
+
+<div class="card">
+    <div class="card-header"><strong>Avaliação</strong></div>
+    <div class="card-body">
+
+    <%= f.fields_for :hotel_survey do |ff| %>
+        <%= render partial: 'user/hotels/show/survey/location' , locals: {f: ff}  %>
+        <%= render partial: 'user/hotels/show/survey/circulation' , locals: {f: ff}  %>
+        <%= render partial: 'user/hotels/show/survey/conservation' , locals: {f: ff}  %>
+        <%= render partial: 'user/hotels/show/structure_evaluation' , locals: {f: f}  %>    
+        <%= render partial: 'user/hotels/show/recreation_evaluation' , locals: {f: f}  %>
+        <%= render partial: 'user/hotels/show/social_evaluation' , locals: {f: f}  %>
+        <%= render partial: 'user/hotels/show/service_evaluation' , locals: {f: f}  %>
+        <%= render partial: 'user/hotels/show/rules_evaluation' , locals: {f: f}  %>
+        <%= render partial: 'user/hotels/show/lodging_evaluation', locals: {f: f}  %>
+        <%= render partial: 'user/hotels/show/accommodationItems_evaluation' , locals: {f: f}  %>
+        <%= render partial: 'user/hotels/show/survey/final_comments' , locals: {f: ff}  %>
+    <% end %>
+
+    </div>
+</div>
+
+

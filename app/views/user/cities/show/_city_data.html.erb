@@ -1,0 +1,154 @@
+<div class="card">
+	<div class="card-header"><strong>Informações da Cidade</strong></div>
+	<div class="card-body">
+
+
+		<div class="form-group row">
+			<div class="col-md-4">
+
+				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+						<% if @city.photos.attached? %>
+						<% counterphotos = 1 %>
+						<% @city.photos.each do |photo| %>
+						<% if counterphotos == @city.photos.count %>
+						<div class="carousel-item active">
+							<% else %>
+							<div class="carousel-item "> 
+								<% end %>
+								<%= image_tag(photo,  class: "d-block w-100")%>
+							</div>
+
+							<% counterphotos += 1 %>
+
+							<% end %>
+
+							<% end %>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class= "row">
+						<div class="col-md-6">
+							Como Encontrar
+						</div>
+						<div class="col-md-6">
+							<%= @city.how_find %>	
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							País
+						</div>
+						<div class="col-md-6">
+							<%= @city.country %>
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Estado
+						</div>
+						<div class="col-md-6">
+							<%= @city.state %>
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Cidade
+						</div>
+						<div class="col-md-6">
+							<%= @city.city %>
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Bioma
+						</div>
+						<div class="col-md-6">
+							<%= @city.biome %>
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Região
+						</div>
+						<div class="col-md-6">
+							<%= @city.region %>
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Melhor Experiencia
+						</div>
+						<div class="col-md-6">
+							<% if !@city.best_experiences.empty? %>
+								<i class="fas fa-glass-cheers" style = "color:purple"></i>&nbsp;<% @city.best_experiences %>
+						
+							
+							<% end %>
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Diferenciais
+						</div>
+						<div class="col-md-6">
+							<% @city.differentials.reject!(&:blank?).each do |d| %>
+							<i class="fas fa-sign" style = "color: green"> </i>&nbsp;<%= d %><br>
+							<% end %>
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Dia Perfeito
+						</div>
+						<div class="col-md-6">
+							<% if @city.perfect_day %>
+							<i class="fas fa-check" style = "color: green"></i>
+							<% else %>
+							<i class="far fa-window-close" style = "color: red"></i>
+							<% end %>
+							
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Especial: 
+						</div>
+						<div class="col-md-6">
+							<% if @city.special %>
+							<i class="fas fa-check" style = "color: green"></i>
+							<% else %>
+							<i class="far fa-window-close" style = "color: red"></i>
+							<% end %>
+						</div>
+					</div>
+					<div class= "row">
+						<div class="col-md-6">
+							Indicações para dia perfeito
+						</div>
+						<div class="col-md-6">
+							<%= @city.perfect_day_remarks %>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+</div>
+
+
+

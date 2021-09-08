@@ -1,0 +1,11 @@
+      <div class="multiselect">
+        <div class="selectBox" onclick="showCheckboxeseRule()">
+          <select class="browser-default custom-select custom-select-lg mb-3">
+            <option>Regras</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div id="rule">
+          <%= f.input :rule,  as: :check_boxes ,collection: Rule.all, input_html: {multiple: true }, class: "form-control" %>
+        </div>
+      </div>

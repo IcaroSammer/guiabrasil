@@ -1,0 +1,19 @@
+<%= f.fields_for :hotel_survey do |ff| %>
+<div class="card">
+  <div class="card-header"><strong>Serviços</strong></div>
+  <div class="card-body">
+
+   <%= render partial: 'user/hotels/show/survey/services' , locals: {f: ff}  %>        	
+   <div class="form-group row">
+    <div class="col-md-12">  
+     <%  Service.where(id: f.object.service).each  do |it|  %>
+     <i class="far fa-thumbs-up" style="color:green;"></i> <%= it.name %><br>
+     <% end %>
+   </div>
+ </div>
+</div>
+</div>
+<hr>
+<% end %>
+
+

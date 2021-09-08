@@ -1,0 +1,60 @@
+/* Mobile ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+  #team_page {
+    .main-content {
+      h2 {
+        br {
+          display: none;
+        }
+      }
+
+      .about-team-box {
+        border: dotted 4px $light-green;
+        border-radius: 15px;
+        padding: 40px 50px;
+        margin: 80px 0;
+
+        p {
+          font-size: 28px;
+        }
+      }
+
+      .team-members {
+        flex-direction: column;
+
+        .member {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 50px;
+          padding-bottom: 20px;
+          flex-direction: column;
+          border-bottom: dotted 4px $light-green;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+
+          &__photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+          }
+
+          &__bio {
+            width: 100%;
+            margin-left: 0;
+          }
+
+          h3 {
+            margin-top: 30px;
+            font-size: 34px;
+          }
+
+          p {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+}

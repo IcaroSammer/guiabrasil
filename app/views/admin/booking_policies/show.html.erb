@@ -1,0 +1,27 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Icone #{@booking_policy.name} " %> 
+      		<%= edit_resource edit_user_booking_policy_path(@booking_policy) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= Icon.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @booking_policy.active %><br>
+            <b><%= Icon.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @booking_policy.name %><br>
+            <b><%= Icon.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @booking_policy.description %><br>
+
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_booking_policies_path) %>
+    
+  
+  </footer>

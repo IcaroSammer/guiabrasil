@@ -1,0 +1,25 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Tipos de acomodação #{@socialitem.name} " %> 
+      		<%= edit_resource edit_admin_social_item_path(@socialitem) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= SocialItem.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @socialitem.active %><br>
+            <b><%= SocialItem.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @socialitem.name %><br>
+            
+            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_social_items_path) %>
+    
+  
+  </footer>

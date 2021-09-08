@@ -1,0 +1,25 @@
+<br>
+<section class='fields-wrapper two-columns'>
+    <header>
+      	<h2> <%= "Porte da Acomodação #{@accommodation_size.name} " %> 
+      		<%= edit_resource edit_admin_accommodation_size_path(@accommodation_size) %>
+      	</h2>
+    </header>
+</section>
+  <section class='fields-wrapper two-columns'>    
+      <article>
+            <br>
+            <b><%= AccommodationSize.human_attribute_name(:active) %>:&nbsp;</b>
+            <%= @accommodation_size.active %><br>
+            <b><%= AccommodationSize.human_attribute_name(:name) %>:&nbsp;</b>
+            <%= @accommodation_size.name %><br>
+            <b><%= AccommodationSize.human_attribute_name(:description) %>:&nbsp;</b>
+            <%= @accommodation_size.description %><br>
+            <b><%= AccommodationSize.human_attribute_name(:number_of_guest) %>:&nbsp;</b>
+            <%= @accommodation_size.number_of_guest %><br>            
+      </article>
+  </section>
+
+  <footer>
+    <%= cancel_action(path: admin_accommodation_sizes_path) %>
+  </footer>

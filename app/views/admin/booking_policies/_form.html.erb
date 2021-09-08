@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, @booking_policy] do |f|%>
+<section class='fields-wrapper two-columns'>
+  <header>
+    <h2>Política de Reserva</h2>
+  </header>
+  <article>
+    <%= f.input :active, label: "Ativa ?" %>
+    <%= f.input :name, placeholder: 'Nova Política de Reserva ', required: :true %>  
+    <%= f.input :business_establishment, as: :check_boxes, collection: human_attribute_establishment_types, input_html: {multiple: true}, required: :true %>
+    <%= f.input :description, placeholder: 'Descriçao do item', required: :true %>
+  </article>
+</section>
+
+<footer>
+  <%= submit_button f %>
+</footer>
+
+
+<% end %>
